@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfoilo2", "Portfoilo2\Portfoilo2.csproj", "{0D5143F4-BB11-4DF7-BC91-BB219E34CBEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebService", "Portfoilo2\WebService.csproj", "{0D5143F4-BB11-4DF7-BC91-BB219E34CBEC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataServiceLib", "DataServiceLib\DataServiceLib.csproj", "{DD22C845-9798-452D-B806-6FBC1B0D40F5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{0D5143F4-BB11-4DF7-BC91-BB219E34CBEC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0D5143F4-BB11-4DF7-BC91-BB219E34CBEC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0D5143F4-BB11-4DF7-BC91-BB219E34CBEC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD22C845-9798-452D-B806-6FBC1B0D40F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD22C845-9798-452D-B806-6FBC1B0D40F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD22C845-9798-452D-B806-6FBC1B0D40F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD22C845-9798-452D-B806-6FBC1B0D40F5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

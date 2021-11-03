@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "az308VZkiTwNRpmynuHIp3UYiqU48beUaPg/PI48vBNScp3L4XUDKjI2ozoJikhGefBSU4PlH71/wTQK7oSrjA==",
+  "dgSpecHash": "UVN5EpP4pRHbfavyMdY9c2Z6cAUFhQihnsHivS/lWox/R68nSnZhk72Pz+W3qBGr+UZMkPG3v0ojqvw7P0Z7DA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\Portfoilo2\\WebService.csproj",
+  "projectFilePath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JesperBlom\\.nuget\\packages\\microsoft.entityframeworkcore\\5.0.10\\microsoft.entityframeworkcore.5.0.10.nupkg.sha512",
     "C:\\Users\\JesperBlom\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\5.0.10\\microsoft.entityframeworkcore.abstractions.5.0.10.nupkg.sha512",
