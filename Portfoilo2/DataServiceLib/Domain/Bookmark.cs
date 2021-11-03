@@ -8,5 +8,16 @@ namespace DataServiceLib.Domain
 {
     class Bookmark
     {
+        public int UserId { get; set; }
+        public string TitleId { get; set; }
+
+        public ICollection<User> Users { get; set; }
+
+        public ICollection<Title> Titles { get; set; }
+
+        public override string ToString()
+        {
+            return $"UserId = {UserId}, TitleId = {TitleId}, Users = {Users}, Titles = {Titles}";
+        }
     }
 }
