@@ -8,12 +8,14 @@ namespace DataServiceLib.Domain
 {
     class Profession
     {
-        public string Id { get; set; }
+        public string ActorId { get; set; }
 	    public string Name { get; set; }
+
+        public ICollection<Actor> Actors { get; set; }
         
         public override string ToString()
         {
-            return $"Id = {Id}, Name = {Name}";
+            return $"ActorId = {ActorId}, Name = {Name}, Actors = {Actors}";
         }
     }
 }

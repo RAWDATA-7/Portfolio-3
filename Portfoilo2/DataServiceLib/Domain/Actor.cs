@@ -18,9 +18,14 @@ namespace DataServiceLib.Domain
 
         public ICollection<Principals> Principals { get; set; }
 
+        public ICollection<KnownForTitles> KnownForTitles { get; set; }
+
+
+
         public override string ToString()
         {
-            return $"Id = {Id}, Name = {Name}, BirthYear = {BirthYear}, DeathYear = {DeathYear}, Rating = {Rating}, Profession = {Profession}";
+            return $"Id = {Id}, Name = {Name}, BirthYear = {BirthYear}, DeathYear = {DeathYear}, Rating = {Rating}, Profession = {Professions}," +
+                $" Principals = {Principals}, KnownForTitles = {KnownForTitles}";
         }
     }
 }

@@ -6,17 +6,19 @@ using System.Threading.Tasks;
 
 namespace DataServiceLib.Domain
 {
-    class Index
+    class Genre
     {
-        public string TitleID { get; set; }
-        public string Word { get; set; }
-        public string Field { get; set; }
+        public string TitleId { get; set; }
+
+        public string Name { get; set; }
 
         public ICollection<Title> Titles { get; set; }
 
         public override string ToString()
         {
-            return $"TitleID = {TitleID}, Word = {Word}, Field = {Field}, Titles = {Titles}";
+            return $"TitleId = {TitleId}, Name = {Name}, Titles = {Titles}";
         }
     }
+
 }
+
