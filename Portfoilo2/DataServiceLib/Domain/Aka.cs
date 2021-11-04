@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataServiceLib.Domain
 {
-    class Aka
+	public class Aka
     {
 		public string TitleID { get; set; }
 		public int Ordering { get; set; }

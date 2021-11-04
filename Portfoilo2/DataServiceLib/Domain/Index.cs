@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataServiceLib.Domain
 {
-    class Index
+    public class Index
     {
         public string TitleID { get; set; }
         public string Word { get; set; }

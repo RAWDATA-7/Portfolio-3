@@ -8,7 +8,7 @@ using DataServiceLib.Domain;
 
 namespace DataServiceLib
 {
-    class IMDbContext : DbContext
+    public class IMDbContext : DbContext
     {
         public DbSet<Actor> Actors { get; set; }
         public DbSet<Profession> Professions { get; set; }

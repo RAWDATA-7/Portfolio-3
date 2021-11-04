@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataServiceLib.Domain
 {
-    class Bookmark
+    public class Bookmark
     {
         public int UserId { get; set; }
         public string TitleId { get; set; }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataServiceLib.Domain
 {
-    class SearchHistory
+    public class SearchHistory
     {
         public int UserId { get; set; }
         public DateTime TimeStamp { get; set; }

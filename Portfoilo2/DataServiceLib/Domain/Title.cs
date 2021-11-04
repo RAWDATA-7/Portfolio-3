@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataServiceLib.Domain
 {
-    class Title
+	public class Title
     {
 		public string Id { get; set; }
 		public string Type { get; set; }

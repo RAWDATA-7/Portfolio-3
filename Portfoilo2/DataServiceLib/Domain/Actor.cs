@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 //kommentar fra en mac...
 namespace DataServiceLib.Domain
 {
-    class Actor
+    public class Actor
     {
         public string Id { get; set; }
         public string Name { get; set; }
