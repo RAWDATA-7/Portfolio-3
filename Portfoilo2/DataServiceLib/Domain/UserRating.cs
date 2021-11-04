@@ -8,8 +8,8 @@ namespace DataServiceLib.Domain
 {
     public class UserRating
     {
-        public int UserID { get; set; }
-        public string TitleID { get; set; }
+        public int UserId { get; set; }
+        public string TitleId { get; set; }
         public decimal Rating { get; set; }
 
         public User User { get; set; }
@@ -17,7 +17,7 @@ namespace DataServiceLib.Domain
 
         public override string ToString()
         {
-            return $"UserID = {UserID}, TitleID = {TitleID}, Rating = {Rating}, User = {User}, TitleRating = {TitleRating}";
+            return $"UserId = {UserId}, TitleId = {TitleId}, Rating = {Rating}, User = {User}, TitleRating = {TitleRating}";
         }
     }
 }

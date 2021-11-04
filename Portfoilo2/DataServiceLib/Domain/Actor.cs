@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-//kommentar fra en mac...
+//Kommentar her!
 namespace DataServiceLib.Domain
 {
-    public class Actor
+     public class Actor
     {
         public string Id { get; set; }
         public string Name { get; set; }
