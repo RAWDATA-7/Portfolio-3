@@ -9,7 +9,6 @@ namespace DataServiceLib.Domain
     class Genre
     {
         public string TitleId { get; set; }
-
         public string Name { get; set; }
 
         public ICollection<Title> Titles { get; set; }
