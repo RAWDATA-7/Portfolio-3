@@ -8,8 +8,8 @@ namespace DataServiceLib.Domain
 {
     public class KnownForTitles
     {
-        public string TitleID { get; set; }
-        public string ActorID { get; set; }
+        public string TitleId { get; set; }
+        public string ActorId { get; set; }
 
         public ICollection<Actor> Actors { get; set; }
 
@@ -17,7 +17,7 @@ namespace DataServiceLib.Domain
 
         public override string ToString()
         {
-            return $"TitleID = {TitleID}, ActorID = {ActorID}, Actors = {Actors}, Titles = {Titles}";
+            return $"TitleId = {TitleId}, ActorId = {ActorId}, Actors = {Actors}, Titles = {Titles}";
         }
     }
 }

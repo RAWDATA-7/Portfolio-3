@@ -41,93 +41,93 @@ namespace DataServiceLib
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Actor>().ToTable("names");
-            modelBuilder.Entity<Actor>().Property(x => x.Id).HasColumnName("nameID");
+            modelBuilder.Entity<Actor>().Property(x => x.Id).HasColumnName("nameid");
             modelBuilder.Entity<Actor>().Property(x => x.Name).HasColumnName("primaryname");
-            modelBuilder.Entity<Actor>().Property(x => x.BirthYear).HasColumnName("birthYear");
-            modelBuilder.Entity<Actor>().Property(x => x.DeathYear).HasColumnName("deathYear");
+            modelBuilder.Entity<Actor>().Property(x => x.BirthYear).HasColumnName("birthyear");
+            modelBuilder.Entity<Actor>().Property(x => x.DeathYear).HasColumnName("deathyear");
             modelBuilder.Entity<Actor>().Property(x => x.Rating).HasColumnName("actorrating");
    
-            modelBuilder.Entity<Profession>().ToTable("professions");
-            modelBuilder.Entity<Profession>().Property(x => x.ActorId).HasColumnName("nameID");
+            modelBuilder.Entity<Profession>().ToTable("professions").HasKey(pk => new { pk.ActorId });
+            modelBuilder.Entity<Profession>().Property(x => x.ActorId).HasColumnName("nameid");
             modelBuilder.Entity<Profession>().Property(x => x.Name).HasColumnName("professionname");
 
-            modelBuilder.Entity<Principals>().ToTable("principals");
-            modelBuilder.Entity<Principals>().Property(x => x.TitleID).HasColumnName("titleID");
+            modelBuilder.Entity<Principals>().ToTable("principals").HasKey(pk => new { pk.TitleId, pk.ActorId});
+            modelBuilder.Entity<Principals>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<Principals>().Property(x => x.Ordering).HasColumnName("ordering");
-            modelBuilder.Entity<Principals>().Property(x => x.ActorID).HasColumnName("nameID");
+            modelBuilder.Entity<Principals>().Property(x => x.ActorId).HasColumnName("nameid");
             modelBuilder.Entity<Principals>().Property(x => x.Category).HasColumnName("category");
             modelBuilder.Entity<Principals>().Property(x => x.Job).HasColumnName("job");
             modelBuilder.Entity<Principals>().Property(x => x.Characters).HasColumnName("characters");
 
-            modelBuilder.Entity<KnownForTitles>().ToTable("knownfortitles");
-            modelBuilder.Entity<KnownForTitles>().Property(x => x.TitleID).HasColumnName("titleID");
-            modelBuilder.Entity<KnownForTitles>().Property(x => x.ActorID).HasColumnName("nameID");
+            modelBuilder.Entity<KnownForTitles>().ToTable("knownfortitles").HasKey(pk => new { pk.TitleId, pk.ActorId});
+            modelBuilder.Entity<KnownForTitles>().Property(x => x.TitleId).HasColumnName("titleid");
+            modelBuilder.Entity<KnownForTitles>().Property(x => x.ActorId).HasColumnName("nameid");
 
             modelBuilder.Entity<Title>().ToTable("titles");
-            modelBuilder.Entity<Title>().Property(x => x.Id).HasColumnName("titleID");
-            modelBuilder.Entity<Title>().Property(x => x.Type).HasColumnName("titleType");
-            modelBuilder.Entity<Title>().Property(x => x.PrimaryTitle).HasColumnName("primartTitle");
-            modelBuilder.Entity<Title>().Property(x => x.OriginalTitle).HasColumnName("originalTitle");
-            modelBuilder.Entity<Title>().Property(x => x.IsAdult).HasColumnName("isAdult");
-            modelBuilder.Entity<Title>().Property(x => x.StartYear).HasColumnName("startYear");
-            modelBuilder.Entity<Title>().Property(x => x.EndYear).HasColumnName("endYear");
-            modelBuilder.Entity<Title>().Property(x => x.RunTimeMinutes).HasColumnName("runTimeMinutes");
+            modelBuilder.Entity<Title>().Property(x => x.Id).HasColumnName("titleid");
+            modelBuilder.Entity<Title>().Property(x => x.Type).HasColumnName("titletype");
+            modelBuilder.Entity<Title>().Property(x => x.PrimaryTitle).HasColumnName("primarttitle");
+            modelBuilder.Entity<Title>().Property(x => x.OriginalTitle).HasColumnName("originaltitle");
+            modelBuilder.Entity<Title>().Property(x => x.IsAdult).HasColumnName("isadult");
+            modelBuilder.Entity<Title>().Property(x => x.StartYear).HasColumnName("startyear");
+            modelBuilder.Entity<Title>().Property(x => x.EndYear).HasColumnName("endyear");
+            modelBuilder.Entity<Title>().Property(x => x.RunTimeMinutes).HasColumnName("runtimeminutes");
             modelBuilder.Entity<Title>().Property(x => x.Poster).HasColumnName("poster");
             modelBuilder.Entity<Title>().Property(x => x.Awards).HasColumnName("awards");
             modelBuilder.Entity<Title>().Property(x => x.Plot).HasColumnName("plot");
 
-            modelBuilder.Entity<Domain.Index>().ToTable("index");
-            modelBuilder.Entity<Domain.Index>().Property(x => x.TitleID).HasColumnName("titleID");
+            modelBuilder.Entity<Domain.Index>().ToTable("index").HasKey(pk => new { pk.TitleId });
+            modelBuilder.Entity<Domain.Index>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<Domain.Index>().Property(x => x.Word).HasColumnName("word");
             modelBuilder.Entity<Domain.Index>().Property(x => x.Field).HasColumnName("field");
 
-            modelBuilder.Entity<Aka>().ToTable("akas");
-            modelBuilder.Entity<Aka>().Property(x => x.TitleID).HasColumnName("titleID");
+            modelBuilder.Entity<Aka>().ToTable("akas").HasKey(pk => new { pk.TitleId});
+            modelBuilder.Entity<Aka>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<Aka>().Property(x => x.Ordering).HasColumnName("ordering");
-            modelBuilder.Entity<Aka>().Property(x => x.Title).HasColumnName("title");
+            modelBuilder.Entity<Aka>().Property(x => x.TitleName).HasColumnName("title");
             modelBuilder.Entity<Aka>().Property(x => x.Region).HasColumnName("region");
             modelBuilder.Entity<Aka>().Property(x => x.Language).HasColumnName("language");
             modelBuilder.Entity<Aka>().Property(x => x.Types).HasColumnName("types");
             modelBuilder.Entity<Aka>().Property(x => x.Attributes).HasColumnName("attributes");
-            modelBuilder.Entity<Aka>().Property(x => x.IsOriginalTitle).HasColumnName("isOriginalTitle");
+            modelBuilder.Entity<Aka>().Property(x => x.IsOriginalTitle).HasColumnName("isoriginaltitle");
 
-            modelBuilder.Entity<Genre>().ToTable("genres");
-            modelBuilder.Entity<Genre>().Property(x => x.Name).HasColumnName("genreName");
-            modelBuilder.Entity<Genre>().Property(x => x.TitleId).HasColumnName("titleID");
+            modelBuilder.Entity<Genre>().ToTable("genres").HasKey(pk => new { pk.TitleId });
+            modelBuilder.Entity<Genre>().Property(x => x.Name).HasColumnName("genrename");
+            modelBuilder.Entity<Genre>().Property(x => x.TitleId).HasColumnName("titleid");
 
-            modelBuilder.Entity<Rating>().ToTable("ratings");
-            modelBuilder.Entity<Rating>().Property(x => x.TitleId).HasColumnName("titleID");
-            modelBuilder.Entity<Rating>().Property(x => x.AvgRating).HasColumnName("avgRating");
-            modelBuilder.Entity<Rating>().Property(x => x.NumVotes).HasColumnName("numVotes");
+            modelBuilder.Entity<Rating>().ToTable("ratings").HasKey(pk => new { pk.TitleId });
+            modelBuilder.Entity<Rating>().Property(x => x.TitleId).HasColumnName("titleid");
+            modelBuilder.Entity<Rating>().Property(x => x.AvgRating).HasColumnName("avgrating");
+            modelBuilder.Entity<Rating>().Property(x => x.NumVotes).HasColumnName("numvotes");
 
             modelBuilder.Entity<Episode>().ToTable("episodes");
-            modelBuilder.Entity<Episode>().Property(x => x.Id).HasColumnName("episodeID");
-            modelBuilder.Entity<Episode>().Property(x => x.TitleID).HasColumnName("parentID");
-            modelBuilder.Entity<Episode>().Property(x => x.SeasonNumber).HasColumnName("seasonNumber");
-            modelBuilder.Entity<Episode>().Property(x => x.EpisodeNumber).HasColumnName("episodeNumber");
+            modelBuilder.Entity<Episode>().Property(x => x.Id).HasColumnName("episodeid");
+            modelBuilder.Entity<Episode>().Property(x => x.TitleID).HasColumnName("parentid");
+            modelBuilder.Entity<Episode>().Property(x => x.SeasonNumber).HasColumnName("seasonnumber");
+            modelBuilder.Entity<Episode>().Property(x => x.EpisodeNumber).HasColumnName("episodenumber");
 
             modelBuilder.Entity<User>().ToTable("users");
-            modelBuilder.Entity<User>().Property(x => x.Id).HasColumnName("userID");
-            modelBuilder.Entity<User>().Property(x => x.Name).HasColumnName("userName");
-            modelBuilder.Entity<User>().Property(x => x.FirstName).HasColumnName("firstName");
-            modelBuilder.Entity<User>().Property(x => x.LastName).HasColumnName("lastName");
+            modelBuilder.Entity<User>().Property(x => x.Id).HasColumnName("userid");
+            modelBuilder.Entity<User>().Property(x => x.Name).HasColumnName("username");
+            modelBuilder.Entity<User>().Property(x => x.FirstName).HasColumnName("firstname");
+            modelBuilder.Entity<User>().Property(x => x.LastName).HasColumnName("lastname");
             modelBuilder.Entity<User>().Property(x => x.Email).HasColumnName("email");
             modelBuilder.Entity<User>().Property(x => x.Sex).HasColumnName("sex");
             modelBuilder.Entity<User>().Property(x => x.Password).HasColumnName("password");
 
-            modelBuilder.Entity<SearchHistory>().ToTable("searchhistory");
-            modelBuilder.Entity<SearchHistory>().Property(x => x.UserId).HasColumnName("userID");
-            modelBuilder.Entity<SearchHistory>().Property(x => x.TimeStamp).HasColumnName("timeStamp");
+            modelBuilder.Entity<SearchHistory>().ToTable("searchhistory").HasKey(pk => new { pk.UserId });
+            modelBuilder.Entity<SearchHistory>().Property(x => x.UserId).HasColumnName("userid");
+            modelBuilder.Entity<SearchHistory>().Property(x => x.TimeStamp).HasColumnName("timestamp");
             modelBuilder.Entity<SearchHistory>().Property(x => x.Word).HasColumnName("word");
             modelBuilder.Entity<SearchHistory>().Property(x => x.Field).HasColumnName("field");
 
-            modelBuilder.Entity<Bookmark>().ToTable("bookmarkings");
-            modelBuilder.Entity<Bookmark>().Property(x => x.UserId).HasColumnName("userID");
-            modelBuilder.Entity<Bookmark>().Property(x => x.TitleId).HasColumnName("titleID");
+            modelBuilder.Entity<Bookmark>().ToTable("bookmarkings").HasKey(pk => new { pk.TitleId, pk.UserId });
+            modelBuilder.Entity<Bookmark>().Property(x => x.UserId).HasColumnName("userid");
+            modelBuilder.Entity<Bookmark>().Property(x => x.TitleId).HasColumnName("titleid");
 
-            modelBuilder.Entity<UserRating>().ToTable("userratings");
-            modelBuilder.Entity<UserRating>().Property(x => x.UserId).HasColumnName("userID");
-            modelBuilder.Entity<UserRating>().Property(x => x.TitleId).HasColumnName("titleID");
+            modelBuilder.Entity<UserRating>().ToTable("userratings").HasKey(pk => new { pk.TitleId, pk.UserId });
+            modelBuilder.Entity<UserRating>().Property(x => x.UserId).HasColumnName("userid");
+            modelBuilder.Entity<UserRating>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<UserRating>().Property(x => x.Rating).HasColumnName("rating");
         }
     }

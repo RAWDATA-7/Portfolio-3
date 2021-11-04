@@ -8,7 +8,7 @@ namespace DataServiceLib.Domain
 {
 	public class Aka
     {
-		public string TitleID { get; set; }
+		public string TitleId { get; set; }
 		public int Ordering { get; set; }
 		public string TitleName { get; set; }
 		public string Region { get; set; }
@@ -20,7 +20,7 @@ namespace DataServiceLib.Domain
 
 		public override string ToString()
 		{
-			return $"TitleID = {TitleID}, Ordering = {Ordering}, TitleName = {TitleName}, Region = {Region}, Language = {Language}, " +
+			return $"TitleId = {TitleId}, Ordering = {Ordering}, TitleName = {TitleName}, Region = {Region}, Language = {Language}, " +
 				$"Types = {Types}, Attributes = {Attributes}, IsOriginalTitle = {IsOriginalTitle}, Title = {Title}";
 		}
 	}

@@ -8,7 +8,7 @@ namespace DataServiceLib.Domain
 {
     public class Index
     {
-        public string TitleID { get; set; }
+        public string TitleId { get; set; }
         public string Word { get; set; }
         public string Field { get; set; }
 
@@ -16,7 +16,7 @@ namespace DataServiceLib.Domain
 
         public override string ToString()
         {
-            return $"TitleID = {TitleID}, Word = {Word}, Field = {Field}, Titles = {Titles}";
+            return $"TitleId = {TitleId}, Word = {Word}, Field = {Field}, Titles = {Titles}";
         }
     }
 }
