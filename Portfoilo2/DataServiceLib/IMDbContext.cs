@@ -40,29 +40,18 @@ namespace DataServiceLib
             modelBuilder.Entity<Profession>().Property(x => x.ActorId).HasColumnName("nameID");
             modelBuilder.Entity<Profession>().Property(x => x.Name).HasColumnName("professionname");
 
+            modelBuilder.Entity<Principals>().ToTable("principals");
+            modelBuilder.Entity<Principals>().Property(x => x.TitleID).HasColumnName("titleID");
+            modelBuilder.Entity<Principals>().Property(x => x.Ordering).HasColumnName("ordering");
+            modelBuilder.Entity<Principals>().Property(x => x.ActorID).HasColumnName("nameID");
+            modelBuilder.Entity<Principals>().Property(x => x.Category).HasColumnName("category");
+            modelBuilder.Entity<Principals>().Property(x => x.Job).HasColumnName("job");
+            modelBuilder.Entity<Principals>().Property(x => x.Characters).HasColumnName("characters");
 
-/*
-                                    modelBuilder.Entity<OrderDetails>().ToTable("orderdetails").HasKey(pk => new {pk.ProductId, pk.OrderId});
-                                    modelBuilder.Entity<OrderDetails>().Property(x => x.ProductId).HasColumnName("productid");
-                                    modelBuilder.Entity<OrderDetails>().Property(x => x.OrderId).HasColumnName("orderid");
-                                    modelBuilder.Entity<OrderDetails>().Property(x => x.UnitPrice).HasColumnName("unitprice");
-                                    modelBuilder.Entity<OrderDetails>().Property(x => x.Quantity).HasColumnName("quantity");
-                                    modelBuilder.Entity<OrderDetails>().Property(x => x.Discount).HasColumnName("discount");
-                                    
-            modelBuilder.Entity<Order>().ToTable("orders");
-                                    modelBuilder.Entity<Order>().Property(x => x.Id).HasColumnName("orderid");
-                                    modelBuilder.Entity<Order>().Property(x => x.Date).HasColumnName("orderdate");
-                                    modelBuilder.Entity<Order>().Property(x => x.Required).HasColumnName("requireddate");
-                                    modelBuilder.Entity<Order>().Property(x => x.Shipped).HasColumnName("shippeddate");
-                                    modelBuilder.Entity<Order>().Property(x => x.Freight).HasColumnName("freight");
-                                    modelBuilder.Entity<Order>().Property(x => x.ShipName).HasColumnName("shipname"); 
-                                    modelBuilder.Entity<Order>().Property(x => x.ShipCity).HasColumnName("shipcity");
-                        */
+            modelBuilder.Entity<KnownForTitles>().ToTable("knownfortitles");
+            modelBuilder.Entity<KnownForTitles>().Property(x => x.TitleID).HasColumnName("titleID");
+            modelBuilder.Entity<KnownForTitles>().Property(x => x.ActorID).HasColumnName("nameID");
         }
     }
 }
 
-
-
-    }
-}
