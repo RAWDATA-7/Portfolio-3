@@ -19,10 +19,10 @@ namespace DataServiceLib
         {
             base.OnConfiguring(optionsBuilder);
 
-
+            string path = System.IO.File.ReadAllText(@"Portfoilo2/path");
             optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
             optionsBuilder.EnableSensitiveDataLogging();
-            optionsBuilder.UseNpgsql("host=localhost;db=raw7;uid=postgres;pwd=GrimmeS0");
+            optionsBuilder.UseNpgsql(path);
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -35,24 +35,23 @@ namespace DataServiceLib
             modelBuilder.Entity<Actor>().Property(x => x.BirthYear).HasColumnName("birthYear");
             modelBuilder.Entity<Actor>().Property(x => x.DeathYear).HasColumnName("deathYear");
             modelBuilder.Entity<Actor>().Property(x => x.Rating).HasColumnName("actorrating");
+   
+            modelBuilder.Entity<Profession>().ToTable("professions");
+            modelBuilder.Entity<Profession>().Property(x => x.Id).HasColumnName("productid");
+            modelBuilder.Entity<Profession>().Property(x => x.Name).HasColumnName("productname");
+            modelBuilder.Entity<Profession>().Property(x => x.CategoryId).HasColumnName("categoryid");
+            modelBuilder.Entity<Profession>().Property(x => x.UnitPrice).HasColumnName("unitprice");
+            modelBuilder.Entity<Profession>().Property(x => x.QuantityPerUnit).HasColumnName("quantityperunit");
 
-            /*
-                        modelBuilder.Entity<Product>().ToTable("products");
-                        modelBuilder.Entity<Product>().Property(x => x.Id).HasColumnName("productid");
-                        modelBuilder.Entity<Product>().Property(x => x.Name).HasColumnName("productname");
-                        modelBuilder.Entity<Product>().Property(x => x.CategoryId).HasColumnName("categoryid");
-                        modelBuilder.Entity<Product>().Property(x => x.UnitPrice).HasColumnName("unitprice");
-                        modelBuilder.Entity<Product>().Property(x => x.QuantityPerUnit).HasColumnName("quantityperunit");
-                        modelBuilder.Entity<Product>().Property(x => x.UnitsInStock).HasColumnName("unitsinstock");
-
-
+/*
                                     modelBuilder.Entity<OrderDetails>().ToTable("orderdetails").HasKey(pk => new {pk.ProductId, pk.OrderId});
                                     modelBuilder.Entity<OrderDetails>().Property(x => x.ProductId).HasColumnName("productid");
                                     modelBuilder.Entity<OrderDetails>().Property(x => x.OrderId).HasColumnName("orderid");
                                     modelBuilder.Entity<OrderDetails>().Property(x => x.UnitPrice).HasColumnName("unitprice");
                                     modelBuilder.Entity<OrderDetails>().Property(x => x.Quantity).HasColumnName("quantity");
                                     modelBuilder.Entity<OrderDetails>().Property(x => x.Discount).HasColumnName("discount");
-                                    modelBuilder.Entity<Order>().ToTable("orders");
+                                    
+            modelBuilder.Entity<Order>().ToTable("orders");
                                     modelBuilder.Entity<Order>().Property(x => x.Id).HasColumnName("orderid");
                                     modelBuilder.Entity<Order>().Property(x => x.Date).HasColumnName("orderdate");
                                     modelBuilder.Entity<Order>().Property(x => x.Required).HasColumnName("requireddate");
