@@ -37,11 +37,9 @@ namespace DataServiceLib
             modelBuilder.Entity<Actor>().Property(x => x.Rating).HasColumnName("actorrating");
    
             modelBuilder.Entity<Profession>().ToTable("professions");
-            modelBuilder.Entity<Profession>().Property(x => x.Id).HasColumnName("productid");
-            modelBuilder.Entity<Profession>().Property(x => x.Name).HasColumnName("productname");
-            modelBuilder.Entity<Profession>().Property(x => x.CategoryId).HasColumnName("categoryid");
-            modelBuilder.Entity<Profession>().Property(x => x.UnitPrice).HasColumnName("unitprice");
-            modelBuilder.Entity<Profession>().Property(x => x.QuantityPerUnit).HasColumnName("quantityperunit");
+            modelBuilder.Entity<Profession>().Property(x => x.ActorId).HasColumnName("nameID");
+            modelBuilder.Entity<Profession>().Property(x => x.Name).HasColumnName("professionname");
+
 
 /*
                                     modelBuilder.Entity<OrderDetails>().ToTable("orderdetails").HasKey(pk => new {pk.ProductId, pk.OrderId});

@@ -680,24 +680,26 @@
     ]
   },
   "packageFolders": {
-    "/Users/sfstoevring/.nuget/packages/": {}
+    "C:\\Users\\JesperBlom\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/sfstoevring/Documents/CodeStuffz/Portfolio2/Portfoilo2/Portfoilo2/WebService.csproj",
+      "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\Portfoilo2\\WebService.csproj",
       "projectName": "WebService",
-      "projectPath": "/Users/sfstoevring/Documents/CodeStuffz/Portfolio2/Portfoilo2/Portfoilo2/WebService.csproj",
-      "packagesPath": "/Users/sfstoevring/.nuget/packages/",
-      "outputPath": "/Users/sfstoevring/Documents/CodeStuffz/Portfolio2/Portfoilo2/Portfoilo2/obj/",
+      "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\Portfoilo2\\WebService.csproj",
+      "packagesPath": "C:\\Users\\JesperBlom\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\Portfoilo2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/sfstoevring/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\JesperBlom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -739,7 +741,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/5.0.402/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }
