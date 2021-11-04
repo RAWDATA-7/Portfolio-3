@@ -20,5 +20,21 @@ namespace WebService.Controllers
         private readonly LinkGenerator _linkGenerator;
         private readonly IMapper _mapper;
 
+        public ActorController(IDataservice dataservice, LinkGenerator linkGenerator, IMapper mapper)
+        {
+            _dataService = dataservice;
+            _linkGenerator = linkGenerator;
+            _mapper = mapper;
+        }
+
+        [HttpGet]
+        public IActionResult GetActors() 
+        {
+            var actors = _dataService.GetActors();
+            var model = actors.Select(CreateActorViewModel);
+            return Ok(model); 
+
+        }
+
     }
 }
