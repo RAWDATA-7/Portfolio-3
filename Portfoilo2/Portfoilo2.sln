@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31729.503
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebService", "Portfoilo2\WebService.csproj", "{0D5143F4-BB11-4DF7-BC91-BB219E34CBEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebService", "WebService\WebService.csproj", "{0D5143F4-BB11-4DF7-BC91-BB219E34CBEC}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataServiceLib", "DataServiceLib\DataServiceLib.csproj", "{DD22C845-9798-452D-B806-6FBC1B0D40F5}"
 EndProject
