@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj": {}
+    "C:\\Users\\sfsto\\Documents\\GitHub\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj": {
+    "C:\\Users\\sfsto\\Documents\\GitHub\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
+        "projectUniqueName": "C:\\Users\\sfsto\\Documents\\GitHub\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
         "projectName": "DataServiceLib",
-        "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
-        "packagesPath": "C:\\Users\\JesperBlom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\obj\\",
+        "projectPath": "C:\\Users\\sfsto\\Documents\\GitHub\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
+        "packagesPath": "C:\\Users\\sfsto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\sfsto\\Documents\\GitHub\\Portfolio2\\Portfoilo2\\DataServiceLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JesperBlom\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\sfsto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
