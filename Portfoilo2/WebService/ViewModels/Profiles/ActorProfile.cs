@@ -9,7 +9,7 @@ namespace WebService.ViewModels.Profiles
         public ActorProfile()
         {
             CreateMap<Actor, ActorViewModel>();
-            CreateMap<CreateActorViewModel, Actor>();
+            CreateMap<Actor, ActorListViewModel>();
         }
     }
 }

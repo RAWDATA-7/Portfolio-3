@@ -29,20 +29,15 @@ namespace WebService.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet]
+        [HttpGet(Name = nameof(GetActors))]
         public IActionResult GetActors([FromQuery]UrlParam urlParam) 
         {
             var actors = _dataService.GetActors(urlParam);
             var model = actors.Select(CreateActorListViewModel);
             var result = ActorResultModel(urlParam, _dataService.NumberOfActors(), model);
-            return Ok(model); 
+            return Ok(result); 
         }
-        private ActorViewModel CreateActorViewModel(Actor actor)
-        {
-            var model = _mapper.Map<ActorViewModel>(actor);
-            model.Url = GetUrl(actor);
-            return model;
-        }
+
 
         [HttpGet("{id}", Name = nameof(GetActor))]
         public IActionResult GetActor(string id)
@@ -54,7 +49,7 @@ namespace WebService.Controllers
                 return NotFound();
             }
 
-            var model = CreateActorListViewModel(actor);
+            var model = CreateActorViewModel(actor);
 
             return Ok(model);
         }
@@ -110,6 +105,13 @@ namespace WebService.Controllers
         private string GetActorUrl(Actor actor)
         {
             return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor.Id });
+        }
+
+        private ActorViewModel CreateActorViewModel(Actor actor)
+        {
+            var model = _mapper.Map<ActorViewModel>(actor);
+            model.Url = GetUrl(actor);
+            return model;
         }
 
         private ActorListViewModel CreateActorListViewModel(Actor actor)
