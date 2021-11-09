@@ -30,10 +30,11 @@ namespace WebService.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetActors() 
+        public IActionResult GetActors([FromQuery]UrlParam urlParam) 
         {
-            var actors = _dataService.GetActors();
-            var model = actors.Select(CreateActorViewModel);
+            var actors = _dataService.GetActors(urlParam);
+            var model = actors.Select(CreateActorListViewModel);
+            var result = ActorResultModel(urlParam, _dataService.NumberOfActors(), model);
             return Ok(model); 
         }
         private ActorViewModel CreateActorViewModel(Actor actor)
@@ -53,7 +54,7 @@ namespace WebService.Controllers
                 return NotFound();
             }
 
-            var model = CreateActorViewModel(actor);
+            var model = CreateActorListViewModel(actor);
 
             return Ok(model);
         }
@@ -69,7 +70,7 @@ namespace WebService.Controllers
          */
 
 
-        private object ActorResultModel(UrlParam urlParam, int total, IEnumerable<ActorViewModel> model)
+        private object ActorResultModel(UrlParam urlParam, int total, IEnumerable<ActorListViewModel> model)
         {
             return new
             {
@@ -105,6 +106,17 @@ namespace WebService.Controllers
         private string GetActorsUrl(int page, int pageSize, string orderBy)
         {
             return _linkGenerator.GetUriByName(HttpContext, nameof(GetActors), new { page, pageSize, orderBy });
+        }
+        private string GetActorUrl(Actor actor)
+        {
+            return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor.Id });
+        }
+
+        private ActorListViewModel CreateActorListViewModel(Actor actor)
+        {
+            var model = _mapper.Map<ActorListViewModel>(actor);
+            model.Url = GetActorUrl(actor);
+            return model;
         }
     }
 }

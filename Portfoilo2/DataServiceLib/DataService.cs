@@ -11,20 +11,25 @@ namespace DataServiceLib
     public class DataService : IDataService
     {
 
-        public DataService(){}
-        public IList<Actor> GetActors()
+        public DataService() { }
+        public IList<Actor> GetActors(UrlParam urlParam)
         {
             var ctx = new IMDbContext();
-            return ctx.Actors.ToList();
+            var result = ctx.Actors.AsEnumerable();
+            result = result.Skip(urlParam.Page * urlParam.PageSize).Take(urlParam.PageSize);
+            return result.ToList();
         }
 
         public Actor GetActor(string aId)
         {
-                return GetActors().FirstOrDefault(x => x.Id == aId);
+            var ctx = new IMDbContext();
+            return ctx.Actors.FirstOrDefault(x => x.Id == aId);
         }
-        
-        
-        
-        
+
+        public int NumberOfActors()
+        {
+            var ctx = new IMDbContext();
+            return ctx.Actors.Count();
+        }
     }
 }

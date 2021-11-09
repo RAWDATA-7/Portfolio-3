@@ -5,9 +5,11 @@ namespace DataServiceLib
 {
     public interface IDataService
     {
-        IList<Actor> GetActors();
+        IList<Actor> GetActors(UrlParam urlParam);
 
         Actor GetActor(string aId);
+
+        int NumberOfActors();
         
     }
 }
