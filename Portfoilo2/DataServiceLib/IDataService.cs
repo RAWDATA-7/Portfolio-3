@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using DataServiceLib.Domain;
+using DataServiceLib.FuncDomain;
 
 namespace DataServiceLib
 {
@@ -10,6 +11,8 @@ namespace DataServiceLib
         Actor GetActor(string aId);
 
         int NumberOfActors();
+
+        IList<BestRatedActor> GetBestRatedActors(UrlParam urlParam);
         
     }
 }

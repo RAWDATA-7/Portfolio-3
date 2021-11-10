@@ -54,11 +54,6 @@ namespace WebService.Controllers
             return Ok(model);
         }
 
-        private string GetUrl(Actor actor)
-        {
-            return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor.Id });
-        }
-
 
         /*
          * Helper stuff
@@ -98,13 +93,19 @@ namespace WebService.Controllers
             return (int)Math.Ceiling(total / (double)pageSize) - 1;
         }
 
-        private string GetActorsUrl(int page, int pageSize, string orderBy)
+        private string GetUrl(Actor actor)
         {
-            return _linkGenerator.GetUriByName(HttpContext, nameof(GetActors), new { page, pageSize, orderBy });
+            return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor.Id });
         }
+
         private string GetActorUrl(Actor actor)
         {
             return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor.Id });
+        }
+
+        private string GetActorsUrl(int page, int pageSize, string orderBy)
+        {
+            return _linkGenerator.GetUriByName(HttpContext, nameof(GetActors), new { page, pageSize, orderBy });
         }
 
         private ActorViewModel CreateActorViewModel(Actor actor)

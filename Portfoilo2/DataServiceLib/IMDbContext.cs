@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using DataServiceLib.Domain;
+using DataServiceLib.FuncDomain;
 
 namespace DataServiceLib
 {
@@ -24,6 +25,7 @@ namespace DataServiceLib
         public DbSet<SearchHistory> SearchHistories { get; set; }
         public DbSet<Bookmark> Bookmarks { get; set; }
         public DbSet<UserRating> UserRatings { get; set; }
+        public DbSet<BestRatedActor> BestRatedActors { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -131,6 +133,13 @@ namespace DataServiceLib
             modelBuilder.Entity<UserRating>().Property(x => x.UserId).HasColumnName("userid");
             modelBuilder.Entity<UserRating>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<UserRating>().Property(x => x.Rating).HasColumnName("rating");
+
+            modelBuilder.Entity<BestRatedActor>().HasNoKey();
+            modelBuilder.Entity<BestRatedActor>().Property(x => x.Id).HasColumnName("nameid");
+            modelBuilder.Entity<BestRatedActor>().Property(x => x.Name).HasColumnName("actorname");
+            modelBuilder.Entity<BestRatedActor>().Property(x => x.BirthYear).HasColumnName("byear");
+            modelBuilder.Entity<BestRatedActor>().Property(x => x.DeathYear).HasColumnName("dyear");
+            modelBuilder.Entity<BestRatedActor>().Property(x => x.Rating).HasColumnName("rating");
         }
     }
 }

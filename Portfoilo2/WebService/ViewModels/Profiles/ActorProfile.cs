@@ -1,5 +1,6 @@
 using AutoMapper;
 using DataServiceLib.Domain;
+using DataServiceLib.FuncDomain;
 
 
 namespace WebService.ViewModels.Profiles
