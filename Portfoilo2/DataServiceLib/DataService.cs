@@ -12,7 +12,9 @@ namespace DataServiceLib
     public class DataService : IDataService
     {
         public DataService() { }
-
+        /*
+         Actor Related Func
+        */
         public Actor GetActor(string aId)
         {
             var ctx = new IMDbContext();
@@ -46,14 +48,6 @@ namespace DataServiceLib
             var ctx = new IMDbContext();
             var result = ctx.FindCoActors.FromSqlInterpolated($"SELECT * FROM find_co_actors({aId})").ToList();
             return result;
-//            var actorList = new List<FindCoActor>();
-//            foreach (var c in result) 
-//            {
-//                c.Actor = GetActors(c.Id);
-//                actorList.Add(c);
-//            }
-//            return actorList;
-//
         }
 
 
@@ -63,5 +57,35 @@ namespace DataServiceLib
             var result = ctx.BestRatedActors.FromSqlInterpolated($"SELECT * FROM best_rated_actors()").Skip(urlParam.Page * urlParam.PageSize).Take(urlParam.PageSize);
             return result.ToList();
         }
+
+        /*
+         Title Related Func
+        */
+        public Title GetTitle(string tId)
+        {
+            var ctx = new IMDbContext();
+            var title = ctx.Titles.FirstOrDefault(x => x.Id == tId);
+            return title;
+        }
+
+        public List<Title> GetTitles(string tId)
+        {
+            var ctx = new IMDbContext();
+            return ctx.Titles.Where(x => x.Id == tId).ToList();
+        }
+        // BestRatedTitles Que pasa?
+        public int NumberOfTitles()
+        {
+            var ctx = new IMDbContext();
+            return ctx.Titles.Count();
+        }
+
+        public IList<BestRatedTitle> GetBestRatedTitles(UrlParam urlParam)
+        {
+            var ctx = new IMDbContext();
+            var result = ctx.BestRatedTitles.FromSqlInterpolated($"SELECT * FROM best_rated_titles()").Skip(urlParam.Page * urlParam.PageSize).Take(urlParam.PageSize);
+            return result.ToList();
+        }
+
     }
 }

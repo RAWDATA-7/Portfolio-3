@@ -9,9 +9,15 @@ namespace DataServiceLib
 
         Actor GetActor(string aId);
 
+        Title GetTitle(string tId);
+
         int NumberOfActors();
 
         IList<BestRatedActor> GetBestRatedActors(UrlParam urlParam);
 
+        IList<BestRatedTitle> GetBestRatedTitles(UrlParam urlParam);
+
+        int NumberOfTitles();
+
     }
-}
+}   

@@ -29,6 +29,7 @@ namespace DataServiceLib
         public DbSet<PopularTitle> PopularTitles { get; set; }
 
         public DbSet<FindCoActor> FindCoActors { get; set;}
+        public DbSet<BestRatedTitle> BestRatedTitles { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -73,7 +74,7 @@ namespace DataServiceLib
             modelBuilder.Entity<Title>().ToTable("titles");
             modelBuilder.Entity<Title>().Property(x => x.Id).HasColumnName("titleid");
             modelBuilder.Entity<Title>().Property(x => x.Type).HasColumnName("titletype");
-            modelBuilder.Entity<Title>().Property(x => x.PrimaryTitle).HasColumnName("primarttitle");
+            modelBuilder.Entity<Title>().Property(x => x.PrimaryTitle).HasColumnName("primarytitle");
             modelBuilder.Entity<Title>().Property(x => x.OriginalTitle).HasColumnName("originaltitle");
             modelBuilder.Entity<Title>().Property(x => x.IsAdult).HasColumnName("isadult");
             modelBuilder.Entity<Title>().Property(x => x.StartYear).HasColumnName("startyear");
@@ -151,6 +152,12 @@ namespace DataServiceLib
 
             modelBuilder.Entity<FindCoActor>().HasNoKey();
             modelBuilder.Entity<FindCoActor>().Property(x => x.Id).HasColumnName("nameid");
+
+            modelBuilder.Entity<BestRatedTitle>().HasNoKey();
+            modelBuilder.Entity<BestRatedTitle>().Property(x => x.Id).HasColumnName("titleid");
+            modelBuilder.Entity<BestRatedTitle>().Property(x => x.Name).HasColumnName("titlename");
+            modelBuilder.Entity<BestRatedTitle>().Property(x => x.Rating).HasColumnName("avgrating");
+
 
         }
     }  
