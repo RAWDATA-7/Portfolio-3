@@ -1,5 +1,7 @@
 using AutoMapper;
 using WebService.Controllers;
+using DataServiceLib.Domain;
+using System.Collections.Generic;
 
 namespace WebService.ViewModels
 {
@@ -11,6 +13,10 @@ namespace WebService.ViewModels
         public int? BirthYear { get; set; }
         public int? DeathYear { get; set; }
         public decimal? Rating { get; set; }
+        public List<string> Professions { get; set; }
+        public List<string> Principals { get; set; }
+        public List<string> PopularTitles { get; set; }
+
     }
 
     public class CreateActorViewModel 
@@ -20,6 +26,7 @@ namespace WebService.ViewModels
         public int? BirthYear { get; set; }
         public int? DeathYear { get; set; }
         public decimal? Rating { get; set; }
+        public List<Profession> Profession { get; set; }
 
     }
 }

@@ -29,21 +29,11 @@ namespace WebService.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet(Name = nameof(GetActors))]
-        public IActionResult GetActors([FromQuery]UrlParam urlParam) 
-        {
-            var actors = _dataService.GetActors(urlParam);
-            var model = actors.Select(CreateActorListViewModel);
-            var result = ActorResultModel(urlParam, _dataService.NumberOfActors(), model);
-            return Ok(result); 
-        }
-
-
         [HttpGet("{id}", Name = nameof(GetActor))]
         public IActionResult GetActor(string id)
         {
             var actor = _dataService.GetActor(id);
-
+            
             if (actor == null)
             {
                 return NotFound();
@@ -59,67 +49,22 @@ namespace WebService.Controllers
          * Helper stuff
          */
 
-
-        private object ActorResultModel(UrlParam urlParam, int total, IEnumerable<ActorListViewModel> model)
-        {
-            return new
-            {
-                total,
-                prev = CreatePrevPage(urlParam),
-                current = CreateCurrentPage(urlParam),
-                next = CreateNextPage(urlParam, total),
-                items = model
-            };
-        }
-
-        private string CreatePrevPage(UrlParam urlParam)
-        {
-            return urlParam.Page <= 0 ? null : GetActorsUrl(urlParam.Page - 1, urlParam.PageSize, urlParam.OrderBy);
-        }
-
-        private string CreateCurrentPage(UrlParam urlParam)
-        {
-            return GetActorsUrl(urlParam.Page, urlParam.PageSize, urlParam.OrderBy);
-        }
-
-        private string CreateNextPage(UrlParam urlParam, int total)
-        {
-            var lastPage = GetLastPage(urlParam.PageSize, total);
-            return urlParam.Page >= lastPage ? null : GetActorsUrl(urlParam.Page+1, urlParam.PageSize, urlParam.OrderBy);
-        }
-
-        private int GetLastPage(int pageSize, int total)
-        {
-            return (int)Math.Ceiling(total / (double)pageSize) - 1;
-        }
         
         private string GetUrl(Actor actor)
         {
             return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor.Id });
         }
 
-        private string GetActorUrl(Actor actor)
-        {
-            return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor.Id });
-        }
-
-        private string GetActorsUrl(int page, int pageSize, string orderBy)
-        {
-            return _linkGenerator.GetUriByName(HttpContext, nameof(GetActors), new { page, pageSize, orderBy });
-        }
-
         private ActorViewModel CreateActorViewModel(Actor actor)
         {
             var model = _mapper.Map<ActorViewModel>(actor);
             model.Url = GetUrl(actor);
+            model.Professions = actor.Professions.Select(x => x.Name).ToList();
+            model.Principals = actor.Principals.Select(x=>x.ToString()).ToList();
+            model.PopularTitles = actor.PopularTitles.Select(x=> x.Id).ToList();
             return model;
         }
 
-        private ActorListViewModel CreateActorListViewModel(Actor actor)
-        {
-            var model = _mapper.Map<ActorListViewModel>(actor);
-            model.Url = GetActorUrl(actor);
-            return model;
-        }
+
     }
 }

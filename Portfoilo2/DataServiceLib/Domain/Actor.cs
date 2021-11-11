@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using DataServiceLib.FuncDomain;
 //Kommentar her!
 namespace DataServiceLib.Domain
 {
@@ -19,7 +21,8 @@ namespace DataServiceLib.Domain
         public ICollection<Principals> Principals { get; set; }
 
         public ICollection<KnownForTitles> KnownForTitles { get; set; }
-
+        [NotMapped]
+        public IList<PopularTitle> PopularTitles { get; set; }
 
 
         public override string ToString()

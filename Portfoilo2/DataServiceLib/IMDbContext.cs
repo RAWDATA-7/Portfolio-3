@@ -26,6 +26,7 @@ namespace DataServiceLib
         public DbSet<Bookmark> Bookmarks { get; set; }
         public DbSet<UserRating> UserRatings { get; set; }
         public DbSet<BestRatedActor> BestRatedActors { get; set; }
+        public DbSet<PopularTitle> PopularTitles { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -50,8 +51,8 @@ namespace DataServiceLib
             modelBuilder.Entity<Actor>().Property(x => x.BirthYear).HasColumnName("birthyear");
             modelBuilder.Entity<Actor>().Property(x => x.DeathYear).HasColumnName("deathyear");
             modelBuilder.Entity<Actor>().Property(x => x.Rating).HasColumnName("actorrating");
-   
-            modelBuilder.Entity<Profession>().ToTable("professions").HasKey(pk => new { pk.ActorId });
+
+            modelBuilder.Entity<Profession>().ToTable("professions").HasKey(pk => new { pk.ActorId, pk.Name});
             modelBuilder.Entity<Profession>().Property(x => x.ActorId).HasColumnName("nameid");
             modelBuilder.Entity<Profession>().Property(x => x.Name).HasColumnName("professionname");
 
@@ -140,7 +141,13 @@ namespace DataServiceLib
             modelBuilder.Entity<BestRatedActor>().Property(x => x.BirthYear).HasColumnName("byear");
             modelBuilder.Entity<BestRatedActor>().Property(x => x.DeathYear).HasColumnName("dyear");
             modelBuilder.Entity<BestRatedActor>().Property(x => x.Rating).HasColumnName("rating");
+
+            modelBuilder.Entity<PopularTitle>().HasNoKey();
+            modelBuilder.Entity<PopularTitle>().Property(x => x.Id).HasColumnName("titleid");
+            modelBuilder.Entity<PopularTitle>().Property(x => x.Name).HasColumnName("primarytitle");
+            modelBuilder.Entity<PopularTitle>().Property(x => x.Rating).HasColumnName("avgrating");
+
         }
-    }
+    }  
 }
 
