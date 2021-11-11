@@ -69,9 +69,9 @@ namespace WebService.Controllers
             return (int)Math.Ceiling(total / (double)pageSize) - 1;
         }
 
-        private string GetActorsUrl(BestRatedActor bestRatedActor)
+        private string GetActorUrl(BestRatedActor bestRatedActor)
         {
-            return _linkGenerator.GetUriByName(HttpContext, nameof(GetBestRatedActor), new { bestRatedActor.Id });
+            return _linkGenerator.GetUriByName(HttpContext, nameof(ActorController.GetActor), new { bestRatedActor.Id });
         }
 
         private string GetActorsUrl(int page, int pageSize, string orderBy)
@@ -82,7 +82,7 @@ namespace WebService.Controllers
         private BestRatedActorListViewModel CreateBestRatedActorListViewModel(BestRatedActor bestRatedActor)
         {
             var model = _mapper.Map<BestRatedActorListViewModel>(bestRatedActor);
-            model.Url = GetActorsUrl(bestRatedActor);
+            model.Url = GetActorUrl(bestRatedActor);
             return model;
         }
 

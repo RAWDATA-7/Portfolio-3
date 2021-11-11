@@ -92,7 +92,7 @@ namespace WebService.Controllers
         {
             return (int)Math.Ceiling(total / (double)pageSize) - 1;
         }
-
+        
         private string GetUrl(Actor actor)
         {
             return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor.Id });
