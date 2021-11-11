@@ -18,10 +18,11 @@ namespace DataServiceLib
             var ctx = new IMDbContext();
             var actor = ctx.Actors.Include(p => p.Professions).Include(p => p.Principals).FirstOrDefault(x => x.Id == aId);
             actor.PopularTitles = GetPopularTitle(aId);
+            actor.CoActors = GetCoActors(aId);
             return actor;
         }
 
-        public ICollection<Actor> GetActors(string aId)
+        public List<Actor> GetActors(string aId)
         {
             var ctx = new IMDbContext();
             return ctx.Actors.Where(x => x.Id == aId).ToList();
@@ -39,6 +40,22 @@ namespace DataServiceLib
             var result = ctx.PopularTitles.FromSqlInterpolated($"SELECT * FROM popular_titles({aId})");
             return result.ToList();
         }
+
+        public List<FindCoActor> GetCoActors(string aId)
+        {
+            var ctx = new IMDbContext();
+            var result = ctx.FindCoActors.FromSqlInterpolated($"SELECT * FROM find_co_actors({aId})").ToList();
+            return result;
+//            var actorList = new List<FindCoActor>();
+//            foreach (var c in result) 
+//            {
+//                c.Actor = GetActors(c.Id);
+//                actorList.Add(c);
+//            }
+//            return actorList;
+//
+        }
+
 
         public IList<BestRatedActor> GetBestRatedActors(UrlParam urlParam) 
         {

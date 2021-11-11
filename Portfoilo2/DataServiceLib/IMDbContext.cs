@@ -28,6 +28,8 @@ namespace DataServiceLib
         public DbSet<BestRatedActor> BestRatedActors { get; set; }
         public DbSet<PopularTitle> PopularTitles { get; set; }
 
+        public DbSet<FindCoActor> FindCoActors { get; set;}
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -146,6 +148,9 @@ namespace DataServiceLib
             modelBuilder.Entity<PopularTitle>().Property(x => x.Id).HasColumnName("titleid");
             modelBuilder.Entity<PopularTitle>().Property(x => x.Name).HasColumnName("primarytitle");
             modelBuilder.Entity<PopularTitle>().Property(x => x.Rating).HasColumnName("avgrating");
+
+            modelBuilder.Entity<FindCoActor>().HasNoKey();
+            modelBuilder.Entity<FindCoActor>().Property(x => x.Id).HasColumnName("nameid");
 
         }
     }  

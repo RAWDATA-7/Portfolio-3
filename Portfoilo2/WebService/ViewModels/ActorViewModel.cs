@@ -16,6 +16,7 @@ namespace WebService.ViewModels
         public List<string> Professions { get; set; }
         public List<string> Principals { get; set; }
         public List<string> PopularTitles { get; set; }
+        public List<string> CoActors { get; set; }
 
     }
 

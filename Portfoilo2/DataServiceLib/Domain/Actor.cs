@@ -23,6 +23,8 @@ namespace DataServiceLib.Domain
         public ICollection<KnownForTitles> KnownForTitles { get; set; }
         [NotMapped]
         public IList<PopularTitle> PopularTitles { get; set; }
+        [NotMapped]
+        public IList<FindCoActor> CoActors { get; set; }
 
 
         public override string ToString()

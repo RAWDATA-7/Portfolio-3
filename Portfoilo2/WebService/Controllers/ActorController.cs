@@ -55,6 +55,11 @@ namespace WebService.Controllers
             return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor.Id });
         }
 
+        private string GetUrlCo(string actor)
+        {
+            return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor });
+        }
+
         private ActorViewModel CreateActorViewModel(Actor actor)
         {
             var model = _mapper.Map<ActorViewModel>(actor);
@@ -62,9 +67,16 @@ namespace WebService.Controllers
             model.Professions = actor.Professions.Select(x => x.Name).ToList();
             model.Principals = actor.Principals.Select(x=>x.ToString()).ToList();
             model.PopularTitles = actor.PopularTitles.Select(x=> x.Id).ToList();
+            model.CoActors = actor.CoActors.Select(x => x.Id).ToList();
+            int count = model.CoActors.Count();
+            foreach(var c in actor.CoActors)
+            {
+                c.Id = "https://localhost:5001/api/Actor/"+c.Id;
+                model.CoActors.Add(c.Id);
+            }
+            model.CoActors.RemoveRange(0, count);
             return model;
         }
-
 
     }
 }
