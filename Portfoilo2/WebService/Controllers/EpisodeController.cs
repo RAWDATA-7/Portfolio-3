@@ -50,6 +50,7 @@ namespace WebService.Controllers
         private EpisodeViewModel CreateEpisodeViewModel(Episode episode)
         {
             var model = _mapper.Map<EpisodeViewModel>(episode);
+            model.Id = _linkGenerator.GetUriByName(HttpContext, nameof(TitleController.GetTitle), new { episode.Id });
             return model;
         }
     }
