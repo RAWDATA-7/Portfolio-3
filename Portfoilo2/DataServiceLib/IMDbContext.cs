@@ -110,7 +110,7 @@ namespace DataServiceLib
 
             modelBuilder.Entity<Episode>().ToTable("episodes");
             modelBuilder.Entity<Episode>().Property(x => x.Id).HasColumnName("episodeid");
-            modelBuilder.Entity<Episode>().Property(x => x.TitleID).HasColumnName("parentid");
+            modelBuilder.Entity<Episode>().Property(x => x.TitleId).HasColumnName("parentid");
             modelBuilder.Entity<Episode>().Property(x => x.SeasonNumber).HasColumnName("seasonnumber");
             modelBuilder.Entity<Episode>().Property(x => x.EpisodeNumber).HasColumnName("episodenumber");
 

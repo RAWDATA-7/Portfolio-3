@@ -105,5 +105,25 @@ namespace DataServiceLib
             return ctx.Akas.Where(x => x.TitleId == tId).ToList();
         }
 
+        public Episode GetEpisode(string eId)
+        {
+            var ctx = new IMDbContext();
+            return ctx.Episodes.FirstOrDefault(x => x.Id == eId);
+        }
+
+        public IList<Episode> GetEpisodes(UrlParam urlParam, string tId)
+        {
+            var ctx = new IMDbContext();
+            var episodes = ctx.Episodes.Where(x => x.TitleId == tId).OrderBy(x => x.SeasonNumber).ThenBy(y => y.EpisodeNumber);
+            var result = episodes.Skip(urlParam.Page * urlParam.PageSize).Take(urlParam.PageSize);
+            return result.ToList();
+        }
+        
+        public int NumberOfEpisodes(string tId)
+        {
+            var ctx = new IMDbContext();
+            return ctx.Episodes.Where(x => x.TitleId == tId).Count();
+        }
+
     }
 }

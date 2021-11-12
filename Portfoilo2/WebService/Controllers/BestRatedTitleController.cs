@@ -68,16 +68,16 @@ namespace WebService.Controllers
             return (int)Math.Ceiling(total / (double)pageSize) - 1;
         }
 
-        private string GetTitleUrl(BestRatedTitle bestRatedTitle)
-        {
-            return _linkGenerator.GetUriByName(HttpContext, nameof(TitleController.GetTitle), new { bestRatedTitle.Id });
-        }
+
 
         private string GetTitlesUrl(int page, int pageSize, string orderBy)
         {
             return _linkGenerator.GetUriByName(HttpContext, nameof(GetBestRatedTitle), new { page, pageSize, orderBy });
         }
-
+        private string GetTitleUrl(BestRatedTitle bestRatedTitle)
+        {
+            return _linkGenerator.GetUriByName(HttpContext, nameof(TitleController.GetTitle), new { bestRatedTitle.Id });
+        }
         private BestRatedTitleListViewModel CreateBestRatedTitleListViewModel(BestRatedTitle bestRatedTitle)
         {
             var model = _mapper.Map<BestRatedTitleListViewModel>(bestRatedTitle);

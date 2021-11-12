@@ -9,7 +9,7 @@ namespace DataServiceLib.Domain
     public class Episode
     {
         public string Id { get; set; }
-        public string TitleID { get; set; }
+        public string TitleId { get; set; }
         public int SeasonNumber { get; set; }
         public int EpisodeNumber { get; set; }
 
@@ -17,7 +17,7 @@ namespace DataServiceLib.Domain
 
         public override string ToString()
         {
-            return $"Id = {Id}, TitleID = {TitleID}, SeasonNumber = {SeasonNumber}, EpisodeNumber = {EpisodeNumber}, Titles = {Titles}";
+            return $"Id = {Id}, TitleID = {TitleId}, SeasonNumber = {SeasonNumber}, EpisodeNumber = {EpisodeNumber}, Titles = {Titles}";
         }
     }
 }

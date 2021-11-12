@@ -24,5 +24,11 @@ namespace DataServiceLib
         Rating GetRating(string tId);
 
         IList<Aka> GetAkas(string tId);
+
+        Episode GetEpisode(string eId);
+
+        IList<Episode> GetEpisodes(UrlParam urlParam, string tId);
+
+        int NumberOfEpisodes(string tId);
     }
 }   

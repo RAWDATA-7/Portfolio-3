@@ -25,5 +25,6 @@ namespace WebService.ViewModels
         public decimal Rating { get; set; }
         public int NumVotes { get; set; }
 		public string AkaUrl { get; set; }
+		public string EpisodesUrl { get; set; }
     }
 }

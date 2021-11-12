@@ -54,7 +54,11 @@ namespace WebService.Controllers
             model.Genres = _dataService.GetGenres(title.Id).Select(x => x.Name).ToList();
             model.Rating = _dataService.GetRating(title.Id).AvgRating;
             model.NumVotes = _dataService.GetRating(title.Id).NumVotes;
-            model.AkaUrl = _linkGenerator.GetUriByName(HttpContext, nameof(AkaController.GetAkas), new { title.Id }); ;
+            model.AkaUrl = _linkGenerator.GetUriByName(HttpContext, nameof(AkaController.GetAkas), new { title.Id });
+            if (model.Type == "tvSeries")
+            {
+                model.EpisodesUrl = _linkGenerator.GetUriByName(HttpContext, nameof(EpisodesController.GetEpisodes), new { title.Id });
+            }
             return model;
         }
 
