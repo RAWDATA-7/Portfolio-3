@@ -51,6 +51,9 @@ namespace WebService.Controllers
         {
             var model = _mapper.Map<TitleViewModel>(title);
             model.Url = GetUrl(title);
+            model.Genres = _dataService.GetGenres(title.Id).Select(x => x.Name).ToList();
+            model.Rating = _dataService.GetRating(title.Id).AvgRating;
+            model.NumVotes = _dataService.GetRating(title.Id).NumVotes;
             return model;
         }
 

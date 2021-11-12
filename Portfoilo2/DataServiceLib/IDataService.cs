@@ -19,5 +19,10 @@ namespace DataServiceLib
 
         int NumberOfTitles();
 
+        IList<Genre> GetGenres(string tId);
+
+        Rating GetRating(string tId);
+
+        IList<Aka> GetAkas(string tId);
     }
 }   

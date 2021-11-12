@@ -33,7 +33,7 @@ namespace DataServiceLib
         public int NumberOfActors()
         {
             var ctx = new IMDbContext();
-            return ctx.BestRatedActors.Count();
+            return ctx.Actors.Count();
         }
 
         public IList<PopularTitle> GetPopularTitle(string aId)
@@ -85,6 +85,24 @@ namespace DataServiceLib
             var ctx = new IMDbContext();
             var result = ctx.BestRatedTitles.FromSqlInterpolated($"SELECT * FROM best_rated_titles()").Skip(urlParam.Page * urlParam.PageSize).Take(urlParam.PageSize);
             return result.ToList();
+        }
+
+        public IList<Genre> GetGenres(string tId)
+        {
+            var ctx = new IMDbContext();
+            return ctx.Genres.Where(x => x.TitleId == tId).ToList();
+        }
+
+        public Rating GetRating(string tId)
+        {
+            var ctx = new IMDbContext();
+            return ctx.Ratings.FirstOrDefault(x => x.TitleId == tId);
+        }
+
+        public IList<Aka> GetAkas(string tId)
+        {
+            var ctx = new IMDbContext();
+            return ctx.Akas.Where(x => x.TitleId == tId).ToList();
         }
 
     }

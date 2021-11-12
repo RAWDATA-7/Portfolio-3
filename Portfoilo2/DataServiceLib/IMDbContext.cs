@@ -89,7 +89,7 @@ namespace DataServiceLib
             modelBuilder.Entity<Domain.Index>().Property(x => x.Word).HasColumnName("word");
             modelBuilder.Entity<Domain.Index>().Property(x => x.Field).HasColumnName("field");
 
-            modelBuilder.Entity<Aka>().ToTable("akas").HasKey(pk => new { pk.TitleId});
+            modelBuilder.Entity<Aka>().ToTable("akas").HasKey(pk => new { pk.TitleId, pk.Language});
             modelBuilder.Entity<Aka>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<Aka>().Property(x => x.Ordering).HasColumnName("ordering");
             modelBuilder.Entity<Aka>().Property(x => x.TitleName).HasColumnName("title");

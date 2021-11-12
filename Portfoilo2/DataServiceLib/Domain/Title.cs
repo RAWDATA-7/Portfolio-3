@@ -21,20 +21,16 @@ namespace DataServiceLib.Domain
 		public string Plot { get; set; }
 
 		public ICollection<Principals> Principals { get; set; }
-		public ICollection<KnownForTitles> KnownForTitles { get; set; }
-		public ICollection<Index> Index { get; set; }
 		public ICollection<Aka> Akas { get; set; }
 		public ICollection<Genre> Genres { get; set; }
 		public ICollection<Episode> Episodes { get; set; }
-		public ICollection<Bookmark> Bookmarks { get; set; }
 		public Rating Rating { get; set; }
 
 		public override string ToString()
 		{
 			return $"Id = {Id}, Type = {Type}, PTitle = {PrimaryTitle}, OTitle = {OriginalTitle}, IsAdult = {IsAdult}, StartYear = {StartYear}, EndYear = {EndYear}," +
 				$" RunTimeMinutes = {RunTimeMinutes}, Poster = {Poster}, Awards = {Awards}, Plot = {Plot}, Principals = {Principals}, " +
-				$"KnownForTitles = {KnownForTitles}, Index = {Index}, Akas = {Akas}," +
-				$"Genres = {Genres}, Episodes = {Episodes}, Bookmarks = {Bookmarks}, Rating = {Rating}";
+				$"Akas = {Akas}, Genres = {Genres}, Episodes = {Episodes}, Rating = {Rating}";
 		}
 	}
 }

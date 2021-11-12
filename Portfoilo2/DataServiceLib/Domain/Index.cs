@@ -12,11 +12,10 @@ namespace DataServiceLib.Domain
         public string Word { get; set; }
         public string Field { get; set; }
 
-        public ICollection<Title> Titles { get; set; }
 
         public override string ToString()
         {
-            return $"TitleId = {TitleId}, Word = {Word}, Field = {Field}, Titles = {Titles}";
+            return $"TitleId = {TitleId}, Word = {Word}, Field = {Field}";
         }
     }
 }

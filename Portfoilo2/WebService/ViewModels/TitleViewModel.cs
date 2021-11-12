@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using DataServiceLib.Domain;
+using DataServiceLib.FuncDomain;
 using System.Threading.Tasks;
 
 namespace WebService.ViewModels
@@ -19,5 +21,9 @@ namespace WebService.ViewModels
 		public string Poster { get; set; }
 		public string Awards { get; set; }
 		public string Plot { get; set; }
-	}
+		public IList<string> Genres { get; set; }
+        public decimal Rating { get; set; }
+        public int NumVotes { get; set; }
+		public string AkaUrl { get; set; }
+    }
 }

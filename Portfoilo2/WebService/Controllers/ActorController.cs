@@ -69,12 +69,19 @@ namespace WebService.Controllers
             model.PopularTitles = actor.PopularTitles.Select(x=> x.Id).ToList();
             model.CoActors = actor.CoActors.Select(x => x.Id).ToList();
             int count = model.CoActors.Count();
-            foreach(var c in actor.CoActors)
+            int count1 = model.PopularTitles.Count();
+            foreach (var c in actor.CoActors)
             {
                 c.Id = "https://localhost:5001/api/Actor/"+c.Id;
                 model.CoActors.Add(c.Id);
             }
             model.CoActors.RemoveRange(0, count);
+            foreach (var t in actor.PopularTitles)
+            {
+                t.Id = "https://localhost:5001/api/Title/" + t.Id;
+                model.PopularTitles.Add(t.Id);
+            }
+            model.PopularTitles.RemoveRange(0, count1);
             return model;
         }
 
