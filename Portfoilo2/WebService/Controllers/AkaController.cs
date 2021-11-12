@@ -28,9 +28,9 @@ namespace WebService.Controllers
         }
 
         [HttpGet("{id}", Name = nameof(GetAkas))]
-        public IActionResult GetAkas()
+        public IActionResult GetAkas(string id)
         {
-            var aka = _dataService.GetAkas("tt0903747");
+            var aka = _dataService.GetAkas(id);
             var model = aka.Select(CreateAkaViewModel);
             var result = AkaResultModel(aka, model);
             return Ok(result);
@@ -40,16 +40,16 @@ namespace WebService.Controllers
         {
             return new
             {
-           
-                TitleUrl = GetTitleUrl(aka.FirstOrDefault(x=>x.TitleId == x.TitleId)),
+                TitleUrl = "https://localhost:5001/api/Title/" + aka.First().TitleId,
                 items = model
             };
         }
 
-        private string GetTitleUrl(Aka aka)
+        public string GetUrl(Aka aka)
         {
-            return _linkGenerator.GetUriByName(HttpContext, nameof(TitleController.GetTitle), new { aka.TitleId});
+            return _linkGenerator.GetUriByName(HttpContext, nameof(GetAkas), new { aka.TitleId });
         }
+
 
         private AkaViewModel CreateAkaViewModel(Aka aka)
         {

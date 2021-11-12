@@ -42,7 +42,7 @@ namespace WebService.Controllers
             return Ok(model);
         }
 
-        private string GetUrl(Title title)
+        public string GetUrl(Title title)
         {
             return _linkGenerator.GetUriByName(HttpContext, nameof(GetTitle), new { title.Id });
         }
@@ -54,6 +54,7 @@ namespace WebService.Controllers
             model.Genres = _dataService.GetGenres(title.Id).Select(x => x.Name).ToList();
             model.Rating = _dataService.GetRating(title.Id).AvgRating;
             model.NumVotes = _dataService.GetRating(title.Id).NumVotes;
+            model.AkaUrl = _linkGenerator.GetUriByName(HttpContext, nameof(AkaController.GetAkas), new { title.Id }); ;
             return model;
         }
 

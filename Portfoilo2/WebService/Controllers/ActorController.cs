@@ -50,7 +50,7 @@ namespace WebService.Controllers
          */
 
         
-        private string GetUrl(Actor actor)
+        public string GetUrl(Actor actor)
         {
             return _linkGenerator.GetUriByName(HttpContext, nameof(GetActor), new { actor.Id });
         }
