@@ -125,5 +125,13 @@ namespace DataServiceLib
             return ctx.Episodes.Where(x => x.TitleId == tId).Count();
         }
 
+        //User Stuff
+
+        public User GetUser(int uId)
+        {
+            var ctx = new IMDbContext();
+            return ctx.Users.FirstOrDefault(x => x.Id == uId);
+        }
+
     }
 }

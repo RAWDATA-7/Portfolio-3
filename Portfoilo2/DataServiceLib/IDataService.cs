@@ -30,5 +30,7 @@ namespace DataServiceLib
         IList<Episode> GetEpisodes(UrlParam urlParam, string tId);
 
         int NumberOfEpisodes(string tId);
+
+        User GetUser(int uId);
     }
 }   

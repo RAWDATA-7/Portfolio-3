@@ -122,6 +122,9 @@ namespace DataServiceLib
             modelBuilder.Entity<User>().Property(x => x.Email).HasColumnName("email");
             modelBuilder.Entity<User>().Property(x => x.Sex).HasColumnName("sex");
             modelBuilder.Entity<User>().Property(x => x.Password).HasColumnName("password");
+            modelBuilder.Entity<User>().Property(x => x.Salt).HasColumnName("salt");
+
+
 
             modelBuilder.Entity<SearchHistory>().ToTable("searchhistory").HasKey(pk => new { pk.UserId });
             modelBuilder.Entity<SearchHistory>().Property(x => x.UserId).HasColumnName("userid");
