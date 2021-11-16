@@ -40,7 +40,7 @@ namespace DataServiceLib
             string lastName,
             string email,
             string sex,
-            string password,
-            string salt);
+            byte[] password,
+            byte[] salt);
     }
 }   

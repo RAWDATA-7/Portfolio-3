@@ -13,13 +13,13 @@ namespace DataServiceLib
         {
             var hmac = new HMACSHA512();
             pwdSalt = hmac.Key;
-            pwdHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(plainTxtPwd));
+            pwdHash = hmac.ComputeHash(Encoding.ASCII.GetBytes(plainTxtPwd));
         }
 
         public static bool VerifyPwdHash(string plainTxtPwd, byte[] pwdHash, byte[] pwdSalt)
         {
             var hmac = new HMACSHA512(pwdSalt);
-            var computeHash = hmac.ComputeHash(System.Text.Encoding.UTF8.GetBytes(plainTxtPwd));
+            var computeHash = hmac.ComputeHash(Encoding.ASCII.GetBytes(plainTxtPwd));
 
             for(int i = 0; i < computeHash.Length; i++)
             {

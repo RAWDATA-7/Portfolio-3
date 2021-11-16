@@ -14,8 +14,8 @@ namespace DataServiceLib.Domain
 		public string LastName { get; set; }
 		public string Email { get; set; }
 		public string Sex { get; set; }
-		public string Password { get; set; }
-		public string Salt { get; set; }
+		public Byte[] Password { get; set; }
+		public Byte[] Salt { get; set; }
 		
 		public ICollection<SearchHistory> SearchHistories { get; set; }
 		public ICollection<UserRating> UserRatings { get; set; }

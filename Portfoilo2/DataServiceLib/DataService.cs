@@ -145,8 +145,8 @@ namespace DataServiceLib
             string lastName,
             string email,
             string sex,
-            string password,
-            string salt)
+            byte[] password,
+            byte[] salt)
         {
             var ctx = new IMDbContext();
             ctx.Database.ExecuteSqlInterpolated($"CALL createUser({ name},{ firstName},{ lastName},{ email},{ sex},{ password},{ salt})");
