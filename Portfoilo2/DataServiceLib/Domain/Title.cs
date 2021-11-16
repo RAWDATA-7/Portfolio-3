@@ -24,13 +24,12 @@ namespace DataServiceLib.Domain
 		public ICollection<Aka> Akas { get; set; }
 		public ICollection<Genre> Genres { get; set; }
 		public ICollection<Episode> Episodes { get; set; }
-		public Rating Rating { get; set; }
 
 		public override string ToString()
 		{
 			return $"Id = {Id}, Type = {Type}, PTitle = {PrimaryTitle}, OTitle = {OriginalTitle}, IsAdult = {IsAdult}, StartYear = {StartYear}, EndYear = {EndYear}," +
 				$" RunTimeMinutes = {RunTimeMinutes}, Poster = {Poster}, Awards = {Awards}, Plot = {Plot}, Principals = {Principals}, " +
-				$"Akas = {Akas}, Genres = {Genres}, Episodes = {Episodes}, Rating = {Rating}";
+				$"Akas = {Akas}, Genres = {Genres}, Episodes = {Episodes}";
 		}
 	}
 }

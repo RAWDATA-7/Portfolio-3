@@ -11,11 +11,9 @@ namespace DataServiceLib.Domain
         public int UserId { get; set; }
         public string TitleId { get; set; }
 
-        public ICollection<User> Users { get; set; }
-
         public override string ToString()
         {
-            return $"UserId = {UserId}, TitleId = {TitleId}, Users = {Users}";
+            return $"UserId = {UserId}, TitleId = {TitleId}";
         }
     }
 }

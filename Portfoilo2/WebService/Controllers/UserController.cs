@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using AutoMapper;
 using DataServiceLib;
+using DataServiceLib.Domain;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+using WebService.ViewModels;
 
 namespace WebService.Controllers
 {
@@ -12,10 +16,14 @@ namespace WebService.Controllers
     public class UserController : ControllerBase
     {
         private readonly IDataService _dataService;
+        private readonly LinkGenerator _linkGenerator;
+        private readonly IMapper _mapper;
 
-        public UserController(IDataService dataService)
+        public UserController(IDataService dataservice, LinkGenerator linkGenerator, IMapper mapper)
         {
-            _dataService = dataService;
+            _dataService = dataservice;
+            _linkGenerator = linkGenerator;
+            _mapper = mapper;
         }
 
         [HttpGet("{id}", Name = nameof(GetUser))]
@@ -27,7 +35,23 @@ namespace WebService.Controllers
             {
                 return NotFound();
             }
-            return Ok();
+
+            var model = CreateUserViewModel(user);
+
+            return Ok(model);
         }
+
+        public string GetUrl(User user)
+        {
+            return _linkGenerator.GetUriByName(HttpContext, nameof(GetUser), new { user.Id });
+        }
+
+
+        private UserViewModel CreateUserViewModel(User user)
+        {
+            var model = _mapper.Map<UserViewModel>(user);
+            return model;
+        }
+
     }
 }

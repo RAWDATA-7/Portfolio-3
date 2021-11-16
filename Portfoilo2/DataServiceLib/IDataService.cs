@@ -42,5 +42,14 @@ namespace DataServiceLib
             string sex,
             byte[] password,
             byte[] salt);
+
+        void updateBookmarks(int uId, string tId);
+
+        void updateSearchHistory(int uId, string searchString, string field);
+
+        void updateUserRating(int uId, string tId, int rating);
+
+        IList<BestMatch> GetBestMatches(int uId, string searchString, string field, UrlParam urlParam);
+
     }
 }   

@@ -17,15 +17,14 @@ namespace DataServiceLib.Domain
 		public Byte[] Password { get; set; }
 		public Byte[] Salt { get; set; }
 		
-		public ICollection<SearchHistory> SearchHistories { get; set; }
+		public ICollection<SearchHistory> SearchHistory { get; set; }
 		public ICollection<UserRating> UserRatings { get; set; }
-
 		public ICollection<Bookmark> Bookmarks { get; set; }
 
 		public override string ToString()
 		{
 			return $"Id = {Id}, Name = {Name}, FirstName = {FirstName}, LastName = {LastName}, Email = {Email}, Sex = {Sex}," +
-				$" Password = {Password}, Salt = {Salt}, SearchHistories = {SearchHistories}, UserRatings = {UserRatings}, Bookmarks = {Bookmarks}";
+				$" Password = {Password}, Salt = {Salt}, SearchHistories = {SearchHistory}, UserRatings = {UserRatings}, Bookmarks = {Bookmarks}";
 		}
 	}
 }

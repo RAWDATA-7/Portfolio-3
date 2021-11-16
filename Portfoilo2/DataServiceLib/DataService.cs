@@ -131,7 +131,7 @@ namespace DataServiceLib
         public User GetUserFromId(int uId)
         {
             var ctx = new IMDbContext();
-            return ctx.Users.FirstOrDefault(x => x.Id == uId);
+            return ctx.Users.Include(b => b.Bookmarks).Include(sh => sh.SearchHistory).Include(ur => ur.UserRatings).FirstOrDefault(x => x.Id == uId);
         }
 
         public User GetUserFromUsername(string username)
@@ -151,6 +151,36 @@ namespace DataServiceLib
             var ctx = new IMDbContext();
             ctx.Database.ExecuteSqlInterpolated($"CALL createUser({ name},{ firstName},{ lastName},{ email},{ sex},{ password},{ salt})");
             ctx.SaveChanges();
+        }
+
+        //Updates
+
+        public void updateBookmarks(int uId, string tId)
+        {
+            var ctx = new IMDbContext();
+            ctx.Database.ExecuteSqlInterpolated($"CALL bookmarking({ uId},{ tId})");
+            ctx.SaveChanges();
+        }
+
+        public void updateSearchHistory(int uId, string searchString, string field)
+        {
+            var ctx = new IMDbContext();
+            ctx.Database.ExecuteSqlInterpolated($"CALL updatesearchhistory({ uId},{ searchString},{field},{DateTime.Now})");
+            ctx.SaveChanges();
+        }
+
+        public void updateUserRating(int uId, string tId, int rating)
+        {
+            var ctx = new IMDbContext();
+            ctx.Database.ExecuteSqlInterpolated($"CALL updateUserRating({uId},{tId},{rating})");
+            ctx.SaveChanges();
+        }
+
+        public IList<BestMatch> GetBestMatches(int uId, string searchString, string field, UrlParam urlParam)
+        {
+            var ctx = new IMDbContext();
+            var result = ctx.BestMatches.FromSqlInterpolated($"SELECT * FROM give_best_match({uId},{searchString},{field},{DateTime.Now})").Skip(urlParam.Page * urlParam.PageSize).Take(urlParam.PageSize);
+            return result.ToList();
         }
 
     }

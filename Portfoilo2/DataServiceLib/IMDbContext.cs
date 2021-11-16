@@ -22,14 +22,14 @@ namespace DataServiceLib
         public DbSet<Rating> Ratings { get; set; }
         public DbSet<Episode> Episodes { get; set; }
         public DbSet<User> Users { get; set; }
-        public DbSet<SearchHistory> SearchHistories { get; set; }
+        public DbSet<SearchHistory> SearchHistory { get; set; }
         public DbSet<Bookmark> Bookmarks { get; set; }
         public DbSet<UserRating> UserRatings { get; set; }
         public DbSet<BestRatedActor> BestRatedActors { get; set; }
         public DbSet<PopularTitle> PopularTitles { get; set; }
-
         public DbSet<FindCoActor> FindCoActors { get; set;}
         public DbSet<BestRatedTitle> BestRatedTitles { get; set; }
+        public DbSet<BestMatch> BestMatches { get; set; }
 
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -125,8 +125,7 @@ namespace DataServiceLib
             modelBuilder.Entity<User>().Property(x => x.Salt).HasColumnName("salt");
 
 
-
-            modelBuilder.Entity<SearchHistory>().ToTable("searchhistory").HasKey(pk => new { pk.UserId });
+            modelBuilder.Entity<SearchHistory>().ToTable("searchhistory").HasKey(pk => new { pk.UserId, pk.TimeStamp, pk.Word});
             modelBuilder.Entity<SearchHistory>().Property(x => x.UserId).HasColumnName("userid");
             modelBuilder.Entity<SearchHistory>().Property(x => x.TimeStamp).HasColumnName("timestamp");
             modelBuilder.Entity<SearchHistory>().Property(x => x.Word).HasColumnName("word");
@@ -160,6 +159,11 @@ namespace DataServiceLib
             modelBuilder.Entity<BestRatedTitle>().Property(x => x.Id).HasColumnName("titleid");
             modelBuilder.Entity<BestRatedTitle>().Property(x => x.Name).HasColumnName("titlename");
             modelBuilder.Entity<BestRatedTitle>().Property(x => x.Rating).HasColumnName("avgrating");
+
+            modelBuilder.Entity<BestMatch>().HasNoKey();
+            modelBuilder.Entity<BestMatch>().Property(x => x.TitleId).HasColumnName("titleid");
+            modelBuilder.Entity<BestMatch>().Property(x => x.Rank).HasColumnName("rank");
+            modelBuilder.Entity<BestMatch>().Property(x => x.TitleName).HasColumnName("titlename");
 
 
         }

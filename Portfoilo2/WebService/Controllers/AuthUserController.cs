@@ -62,7 +62,7 @@ namespace WebService.Controllers
             if(user == null)
             {
                 return BadRequest("Username not found...");
-                
+               
             }
 
             byte[] dbPwdHash = user.Password;

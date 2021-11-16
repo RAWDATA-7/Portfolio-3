@@ -13,11 +13,9 @@ namespace DataServiceLib.Domain
         public string Word { get; set; }
         public string Field { get; set; }
 
-        public User User { get; set; }
-
         public override string ToString()
         {
-            return $"UserId = {UserId}, TimeStamp = {TimeStamp}, Word = {Word}, Field = {Field}, User = {User} ";
+            return $"UserId = {UserId}, TimeStamp = {TimeStamp}, Word = {Word}, Field = {Field}";
         }
     }
 }

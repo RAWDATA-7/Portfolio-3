@@ -12,13 +12,9 @@ namespace DataServiceLib.Domain
         public decimal AvgRating { get; set; }
         public int NumVotes { get; set; }
 
-        public ICollection<UserRating> UserRatings { get; set; }
-
-        public Title Title { get; set; }
-
         public override string ToString()
         {
-            return $"TitleId = {TitleId}, AvgRating = {AvgRating}, NumVotes = {NumVotes}, UserRatings = {UserRatings}, Title = {Title}";
+            return $"TitleId = {TitleId}, AvgRating = {AvgRating}, NumVotes = {NumVotes}";
         }
     }
 }

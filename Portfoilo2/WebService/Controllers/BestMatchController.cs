@@ -14,28 +14,28 @@ using DataServiceLib.FuncDomain;
 namespace WebService.Controllers
 {
     [ApiController]
-    [Route("api/BestRatedTitles")]
-    public class BestRatedTitleController : ControllerBase
+    [Route("api/BestMatch")]
+    public class BestMatchController : ControllerBase
     {
         private readonly IDataService _dataService;
         private readonly LinkGenerator _linkGenerator;
         private readonly IMapper _mapper;
 
-        public BestRatedTitleController(IDataService dataservice, LinkGenerator linkGenerator, IMapper mapper)
+        public BestMatchController(IDataService dataservice, LinkGenerator linkGenerator, IMapper mapper)
         {
             _dataService = dataservice;
             _linkGenerator = linkGenerator;
             _mapper = mapper;
         }
-        [HttpGet(Name = nameof(GetBestRatedTitle))]
-        public IActionResult GetBestRatedTitle([FromQuery] UrlParam urlParam)
+        [HttpGet(Name = nameof(GetBestMatch))]
+        public IActionResult GetBestMatch([FromQuery] UrlParam urlParam, [FromQuery]SearchParam searchParam)
         {
-            var titles = _dataService.GetBestRatedTitles(urlParam);
-            var model = titles.Select(CreateBestRatedTitleListViewModel);
-            var result = BestRatedTitleResultModel(urlParam, _dataService.NumberOfTitles(), model);
+            var titles = _dataService.GetBestMatches(searchParam.uId, searchParam.searchString, searchParam.field, urlParam);
+            var model = titles.Select(CreateBestMatchListViewModel);
+            var result = BestMatchResultModel(urlParam, _dataService.NumberOfTitles(), model);
             return Ok(result);
         }
-        private object BestRatedTitleResultModel(UrlParam urlParam, int total, IEnumerable<BestRatedTitleListViewModel> model)
+        private object BestMatchResultModel(UrlParam urlParam, int total, IEnumerable<BestMatchListViewModel> model)
         {
             return new
             {
@@ -68,18 +68,17 @@ namespace WebService.Controllers
             return (int)Math.Ceiling(total / (double)pageSize) - 1;
         }
 
+
+
         private string GetTitlesUrl(int page, int pageSize, string orderBy)
         {
-            return _linkGenerator.GetUriByName(HttpContext, nameof(GetBestRatedTitle), new { page, pageSize, orderBy });
+            return _linkGenerator.GetUriByName(HttpContext, nameof(GetBestMatch), new { page, pageSize, orderBy });
         }
-        private string GetTitleUrl(BestRatedTitle bestRatedTitle)
+
+        private BestMatchListViewModel CreateBestMatchListViewModel(BestMatch bestMatch)
         {
-            return _linkGenerator.GetUriByName(HttpContext, nameof(TitleController.GetTitle), new { bestRatedTitle.Id });
-        }
-        private BestRatedTitleListViewModel CreateBestRatedTitleListViewModel(BestRatedTitle bestRatedTitle)
-        {
-            var model = _mapper.Map<BestRatedTitleListViewModel>(bestRatedTitle);
-            model.Url = GetTitleUrl(bestRatedTitle);
+            var model = _mapper.Map<BestMatchListViewModel>(bestMatch);
+            model.Url = "https://localhost:5001/api/Title/" + bestMatch.TitleId;
             return model;
         }
     }
