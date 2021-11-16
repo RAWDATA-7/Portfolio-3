@@ -31,6 +31,16 @@ namespace DataServiceLib
 
         int NumberOfEpisodes(string tId);
 
-        User GetUser(int uId);
+        User GetUserFromId(int uId);
+
+        User GetUserFromUsername(string username);
+
+        void CreateUser(string name,
+            string firstName,
+            string lastName,
+            string email,
+            string sex,
+            string password,
+            string salt);
     }
 }   

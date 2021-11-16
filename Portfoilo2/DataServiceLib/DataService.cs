@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using DataServiceLib.Domain;
 using DataServiceLib.FuncDomain;
+using Npgsql;
 
 namespace DataServiceLib
 {
@@ -127,10 +128,29 @@ namespace DataServiceLib
 
         //User Stuff
 
-        public User GetUser(int uId)
+        public User GetUserFromId(int uId)
         {
             var ctx = new IMDbContext();
             return ctx.Users.FirstOrDefault(x => x.Id == uId);
+        }
+
+        public User GetUserFromUsername(string username)
+        {
+            var ctx = new IMDbContext();
+            return ctx.Users.FirstOrDefault(x => x.Name == username);
+        }
+
+        public void CreateUser (string name,
+            string firstName,
+            string lastName,
+            string email,
+            string sex,
+            string password,
+            string salt)
+        {
+            var ctx = new IMDbContext();
+            ctx.Database.ExecuteSqlInterpolated($"CALL createUser({ name},{ firstName},{ lastName},{ email},{ sex},{ password},{ salt})");
+            ctx.SaveChanges();
         }
 
     }

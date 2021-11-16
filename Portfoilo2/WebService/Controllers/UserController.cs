@@ -21,7 +21,7 @@ namespace WebService.Controllers
         [HttpGet("{id}", Name = nameof(GetUser))]
         public IActionResult GetUser(int id)
         {
-            var user = _dataService.GetUser(id);
+            var user = _dataService.GetUserFromId(id);
 
             if(user == null)
             {
