@@ -16,10 +16,12 @@ namespace WebService.Controllers
     public class AuthUserController : ControllerBase
     {
         private readonly IDataService _dataService;
+        private readonly IPasswordService _passwordService;
 
-        public AuthUserController(IDataService dataService)
+        public AuthUserController(IDataService dataService, IPasswordService passwordService)
         {
             _dataService = dataService;
+            _passwordService = passwordService;
         }
 
 
@@ -37,8 +39,8 @@ namespace WebService.Controllers
 
             byte[] pwdHash;
             byte[] pwdSalt;
-            //createUserDTO.password -> at first plainTxtPassword then later overwritten with a hashed+salted value...
-            PasswordService.CreatePwdHash(createUserDTO.PlainTxtPwd, out pwdHash, out pwdSalt);
+            //createUserDTO.password -> at first plainTxtPassword then becomes overwritten with (pwd+salt)+hash value...
+            _passwordService.CreatePwdHash(createUserDTO.PlainTxtPwd, out pwdHash, out pwdSalt);
 
             createUserDTO.Password = pwdHash;
             createUserDTO.Salt = pwdSalt;
@@ -67,7 +69,7 @@ namespace WebService.Controllers
 
             byte[] dbPwdHash = user.Password;
             byte[] dbSalt = user.Salt;
-            if(!PasswordService.VerifyPwdHash(loginDTO.Password, dbPwdHash, dbSalt))
+            if(!_passwordService.VerifyPwdHash(loginDTO.Password, dbPwdHash, dbSalt))
             {
                 return BadRequest("Wrong Password...");
             }

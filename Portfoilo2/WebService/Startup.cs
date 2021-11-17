@@ -30,6 +30,7 @@ namespace WebService
             services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddSingleton<IDataService, DataService>();
+            services.AddSingleton<IPasswordService, PasswordService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

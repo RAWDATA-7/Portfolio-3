@@ -7,16 +7,16 @@ using System.Security.Cryptography;
 
 namespace DataServiceLib
 {
-    public class PasswordService
+    public class PasswordService : IPasswordService
     {
-        public static void CreatePwdHash(string plainTxtPwd, out byte[] pwdHash, out byte[] pwdSalt)
+        public  void CreatePwdHash(string plainTxtPwd, out byte[] pwdHash, out byte[] pwdSalt)
         {
             var hmac = new HMACSHA512();
             pwdSalt = hmac.Key;
             pwdHash = hmac.ComputeHash(Encoding.ASCII.GetBytes(plainTxtPwd));
         }
 
-        public static bool VerifyPwdHash(string plainTxtPwd, byte[] pwdHash, byte[] pwdSalt)
+        public  bool VerifyPwdHash(string plainTxtPwd, byte[] pwdHash, byte[] pwdSalt)
         {
             var hmac = new HMACSHA512(pwdSalt);
             var computeHash = hmac.ComputeHash(Encoding.ASCII.GetBytes(plainTxtPwd));
