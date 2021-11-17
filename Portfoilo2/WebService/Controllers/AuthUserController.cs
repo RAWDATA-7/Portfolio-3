@@ -78,8 +78,8 @@ namespace WebService.Controllers
 
             //Token stuff her
             string token = _authService.CreateToken(user);
-
-            return Ok($"Logged in... \ntoken: {token}");
+            
+            return Ok(new { loginDTO.Name, token});
         }
         
 

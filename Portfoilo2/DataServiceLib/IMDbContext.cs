@@ -31,6 +31,8 @@ namespace DataServiceLib
         public DbSet<BestRatedTitle> BestRatedTitles { get; set; }
         public DbSet<BestMatch> BestMatches { get; set; }
 
+        public DbSet<PopularActor> PopularActors { get; set; }
+
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -164,6 +166,10 @@ namespace DataServiceLib
             modelBuilder.Entity<BestMatch>().Property(x => x.TitleId).HasColumnName("titleid");
             modelBuilder.Entity<BestMatch>().Property(x => x.Rank).HasColumnName("rank");
             modelBuilder.Entity<BestMatch>().Property(x => x.TitleName).HasColumnName("titlename");
+
+            modelBuilder.Entity<PopularActor>().HasNoKey();
+            modelBuilder.Entity<PopularActor>().Property(x => x.ActorName).HasColumnName("actorname");
+            modelBuilder.Entity<PopularActor>().Property(x => x.ActorId).HasColumnName("actorid");
 
 
         }

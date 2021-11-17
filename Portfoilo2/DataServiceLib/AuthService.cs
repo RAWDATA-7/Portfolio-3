@@ -31,6 +31,8 @@ namespace DataServiceLib
                 new Claim(ClaimTypes.Name, user.Name)
             };
 
+            Console.WriteLine(user.Id + " , " + user.Name);
+
             var key = new SymmetricSecurityKey(System.Text.Encoding.UTF8.GetBytes(_configuration.GetSection("AppSettings:Token").Value));
 
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha512Signature);

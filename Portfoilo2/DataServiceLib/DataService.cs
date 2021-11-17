@@ -1,12 +1,9 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using DataServiceLib.Domain;
 using DataServiceLib.FuncDomain;
-using Npgsql;
 
 namespace DataServiceLib
 {
@@ -66,6 +63,7 @@ namespace DataServiceLib
         {
             var ctx = new IMDbContext();
             var title = ctx.Titles.FirstOrDefault(x => x.Id == tId);
+            title.PopularActors = GetPopularActors(tId);
             return title;
         }
 
@@ -74,11 +72,18 @@ namespace DataServiceLib
             var ctx = new IMDbContext();
             return ctx.Titles.Where(x => x.Id == tId).ToList();
         }
+
         // BestRatedTitles Que pasa?
         public int NumberOfTitles()
         {
             var ctx = new IMDbContext();
             return ctx.Titles.Count();
+        }
+
+        public List<PopularActor> GetPopularActors(string tId)
+        {
+            var ctx = new IMDbContext();
+            return ctx.PopularActors.FromSqlInterpolated($"SELECT * FROM popular_title_actors({tId})").ToList();
         }
 
         public IList<BestRatedTitle> GetBestRatedTitles(UrlParam urlParam)

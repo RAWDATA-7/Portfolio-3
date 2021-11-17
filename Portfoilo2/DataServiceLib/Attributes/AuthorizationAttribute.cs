@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DataServiceLib.Domain;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System;
 using System.Collections.Generic;
@@ -13,12 +14,13 @@ namespace DataServiceLib.Attributes
     {
         public void OnAuthorization(AuthorizationFilterContext context)
         {
+            Console.WriteLine("test fra Authorization Att");
             var user = context.HttpContext.Items["User"];
+            Console.WriteLine(user + "....s");
             if(user == null)
             {
                 context.Result = new UnauthorizedResult();
             }
-            throw new NotImplementedException();
         }
     }
 }

@@ -26,5 +26,7 @@ namespace WebService.ViewModels
         public int NumVotes { get; set; }
 		public string AkaUrl { get; set; }
 		public string EpisodesUrl { get; set; }
+		public List<string> PopularActors { get; set; }
+		public string ParentUrl { get; set; }
     }
 }
