@@ -1,11 +1,8 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Net;
 using System.Net.Http;
-using DataServiceLib;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using WebService.Controllers;
 using Xunit;
 
 namespace XUnitTest
