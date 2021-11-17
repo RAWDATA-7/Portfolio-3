@@ -12,6 +12,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		path.txt = path.txt
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTest", "XUnitTest\XUnitTest.csproj", "{D5591CAB-95E5-42A5-9F15-D68F4EFD62B6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,6 +28,10 @@ Global
 		{DD22C845-9798-452D-B806-6FBC1B0D40F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DD22C845-9798-452D-B806-6FBC1B0D40F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD22C845-9798-452D-B806-6FBC1B0D40F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5591CAB-95E5-42A5-9F15-D68F4EFD62B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5591CAB-95E5-42A5-9F15-D68F4EFD62B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5591CAB-95E5-42A5-9F15-D68F4EFD62B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5591CAB-95E5-42A5-9F15-D68F4EFD62B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
