@@ -17,11 +17,13 @@ namespace WebService.Controllers
     {
         private readonly IDataService _dataService;
         private readonly IPasswordService _passwordService;
+        private readonly IAuthService _authService;
 
-        public AuthUserController(IDataService dataService, IPasswordService passwordService)
+        public AuthUserController(IDataService dataService, IPasswordService passwordService, IAuthService authService)
         {
             _dataService = dataService;
             _passwordService = passwordService;
+            _authService = authService;
         }
 
 
@@ -75,7 +77,9 @@ namespace WebService.Controllers
             }
 
             //Token stuff her
-            return Ok("Logged in...");
+            string token = _authService.CreateToken(user);
+
+            return Ok($"Logged in... \ntoken: {token}");
         }
         
 

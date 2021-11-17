@@ -38,7 +38,7 @@ namespace DataServiceLib
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(claims),
-                Expires = System.DateTime.Now.AddMinutes(30),
+                Expires = DateTime.Now.AddMinutes(30),
                 SigningCredentials = credentials
             };
 

@@ -31,6 +31,7 @@ namespace WebService
 
             services.AddSingleton<IDataService, DataService>();
             services.AddSingleton<IPasswordService, PasswordService>();
+            services.AddSingleton<IAuthService, AuthService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
