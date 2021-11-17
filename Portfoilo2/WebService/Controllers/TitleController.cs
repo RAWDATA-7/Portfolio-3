@@ -1,16 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using AutoMapper;
 using DataServiceLib;
 using Microsoft.AspNetCore.Routing;
 using WebService.ViewModels;
 using DataServiceLib.Domain;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Authorization;
-using System.Collections.Generic;
-using System;
-using DataServiceLib.Attributes;
 
 namespace WebService.Controllers
 {
@@ -29,17 +23,9 @@ namespace WebService.Controllers
             _mapper = mapper;
         }
 
-        //eksempel på stuff der skal have Authorization...
-        [Authorization]
         [HttpGet("{id}", Name = nameof(GetTitle))]
         public IActionResult GetTitle(string id)
         {
-            Console.WriteLine("test fra titleController");
-            try
-            {
-              //her wrong?
-                var user = Request.HttpContext.Items["User"] as User;
-                Console.WriteLine($"Current user: {user}");
 
                 var title = _dataService.GetTitle(id);
                 if (title == null)
@@ -48,13 +34,7 @@ namespace WebService.Controllers
                 }
 
                 var model = CreateTitleViewModel(title);
-                return Ok(model);
-
-            }
-            catch (Exception)
-            {
-                return Unauthorized("User not authorized...");
-            }
+                return Ok(model);      
         }
 
         public string GetUrl(Title title)

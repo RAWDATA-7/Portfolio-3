@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,7 +14,6 @@ namespace DataServiceLib.Middleware
     {
         public static IApplicationBuilder UseJwtAuth(this IApplicationBuilder builder)
         {
-            Console.WriteLine("test fra middlewareEX...");
             return builder.UseMiddleware<AuthMiddleware>();
         }
     }
@@ -55,10 +53,8 @@ namespace DataServiceLib.Middleware
                 var jwtToken = validatedToken as JwtSecurityToken;
 
                 var claim = jwtToken.Claims.FirstOrDefault(x => x.Type == "nameid");
-                Console.WriteLine("har vi et claim?");
                 if (claim != null)
                 {
-                    Console.WriteLine("test er her et ID?");
                     int.TryParse(claim.Value.ToString(), out var id);
                     context.Items["User"] = _dataService.GetUserFromId(id);
                 }
@@ -67,7 +63,6 @@ namespace DataServiceLib.Middleware
             {
             
             }
-            Console.WriteLine("test pre await");
             await _next(context);
         }
     }

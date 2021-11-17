@@ -1,6 +1,3 @@
-using AutoMapper;
-using WebService.Controllers;
-using DataServiceLib.Domain;
 using System.Collections.Generic;
 
 namespace WebService.ViewModels
@@ -17,17 +14,6 @@ namespace WebService.ViewModels
         public List<string> Principals { get; set; }
         public List<string> PopularTitles { get; set; }
         public List<string> CoActors { get; set; }
-
-    }
-
-    public class CreateActorViewModel 
-    {
-        public string Id { get; set; }  
-        public string Name { get; set; }
-        public int? BirthYear { get; set; }
-        public int? DeathYear { get; set; }
-        public decimal? Rating { get; set; }
-        public List<Profession> Profession { get; set; }
 
     }
 }

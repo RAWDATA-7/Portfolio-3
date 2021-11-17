@@ -1,12 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using System.Reflection.Metadata.Ecma335;
 using AutoMapper;
 using DataServiceLib;
 using Microsoft.AspNetCore.Routing;
 using WebService.ViewModels;
-using DataServiceLib.Domain;
-using Microsoft.AspNetCore.Http;
+using DataServiceLib.Domain
 using System.Collections.Generic;
 using System;
 
