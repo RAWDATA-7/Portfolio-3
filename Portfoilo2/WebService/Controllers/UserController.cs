@@ -1,5 +1,7 @@
-﻿using AutoMapper;
+﻿using System;
+using AutoMapper;
 using DataServiceLib;
+using DataServiceLib.Attributes;
 using DataServiceLib.Domain;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
@@ -9,6 +11,7 @@ namespace WebService.Controllers
 {
     [ApiController]
     [Route("api/User")]
+    [Authorization]
     public class UserController : ControllerBase
     {
         private readonly IDataService _dataService;
@@ -25,16 +28,29 @@ namespace WebService.Controllers
         [HttpGet("{id}", Name = nameof(GetUser))]
         public IActionResult GetUser(int id)
         {
-            var user = _dataService.GetUserFromId(id);
-
-            if(user == null)
+            try
             {
-                return NotFound();
+                var authUser = Request.HttpContext.Items["User"] as User;
+                Console.WriteLine($"Current user: {authUser}");
+                
+                var user = _dataService.GetUserFromId(id);
+                
+                if (user == null)
+                {
+                    return NotFound();
+                }
+                if (authUser.Id == id)
+                {
+                    var model = CreateUserViewModel(user);
+
+                    return Ok(model);
+                }
+                return Unauthorized("User not authorized...");
             }
-
-            var model = CreateUserViewModel(user);
-
-            return Ok(model);
+            catch (Exception)
+            {
+                return Unauthorized("User not authorized...");
+            }
         }
 
         public string GetUrl(User user)

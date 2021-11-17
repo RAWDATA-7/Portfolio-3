@@ -4,7 +4,7 @@ using AutoMapper;
 using DataServiceLib;
 using Microsoft.AspNetCore.Routing;
 using WebService.ViewModels;
-using DataServiceLib.Domain
+using DataServiceLib.Domain;
 using System.Collections.Generic;
 using System;
 
