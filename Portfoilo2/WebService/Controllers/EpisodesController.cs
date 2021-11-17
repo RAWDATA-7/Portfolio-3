@@ -33,36 +33,36 @@ namespace WebService.Controllers
             var episode = _dataService.GetEpisodes(urlParam, id).Where(x => x.TitleId == id).ToList();
             var total = _dataService.NumberOfEpisodes(id);
             var model = episode.Select(CreateEpisodesListViewModel);
-            var result = EpisodesListResultModel(urlParam, total, model);
+            var result = EpisodesListResultModel(urlParam, total, model, id);
             return Ok(result);
         }
 
-        private object EpisodesListResultModel(UrlParam urlParam, int total, IEnumerable<EpisodeListViewModel> model)
+        private object EpisodesListResultModel(UrlParam urlParam, int total, IEnumerable<EpisodeListViewModel> model, string id)
         {
             return new
             {
                 total,
-                prev = CreatePrevPage(urlParam),
-                current = CreateCurrentPage(urlParam),
-                next = CreateNextPage(urlParam, total),
+                prev = CreatePrevPage(urlParam, id),
+                current = CreateCurrentPage(urlParam, id),
+                next = CreateNextPage(urlParam, total, id),
                 items = model
             };
         }
 
-        private string CreatePrevPage(UrlParam urlParam)
+        private string CreatePrevPage(UrlParam urlParam, string id)
         {
-            return urlParam.Page <= 0 ? null : GetEpisodesUrl(urlParam.Page - 1, urlParam.PageSize, urlParam.OrderBy);
+            return urlParam.Page <= 0 ? null : GetEpisodesUrl(urlParam.Page - 1, urlParam.PageSize, urlParam.OrderBy, id);
         }
 
-        private string CreateCurrentPage(UrlParam urlParam)
+        private string CreateCurrentPage(UrlParam urlParam, string id)
         {
-            return GetEpisodesUrl(urlParam.Page, urlParam.PageSize, urlParam.OrderBy);
+            return GetEpisodesUrl(urlParam.Page, urlParam.PageSize, urlParam.OrderBy, id);
         }
 
-        private string CreateNextPage(UrlParam urlParam, int total)
+        private string CreateNextPage(UrlParam urlParam, int total, string id)
         {
             var lastPage = GetLastPage(urlParam.PageSize, total);
-            return urlParam.Page >= lastPage ? null : GetEpisodesUrl(urlParam.Page + 1, urlParam.PageSize, urlParam.OrderBy);
+            return urlParam.Page >= lastPage ? null : GetEpisodesUrl(urlParam.Page + 1, urlParam.PageSize, urlParam.OrderBy, id);
         }
 
         private int GetLastPage(int pageSize, int total)
@@ -70,9 +70,11 @@ namespace WebService.Controllers
             return (int)Math.Ceiling(total / (double)pageSize) - 1;
         }
 
-        private string GetEpisodesUrl(int page, int pageSize, string orderBy)
+        private string GetEpisodesUrl(int page, int pageSize, string orderBy, string id)
         {
-            return _linkGenerator.GetUriByName(HttpContext, nameof(GetEpisodes), new { page, pageSize, orderBy });
+             
+            var result = _linkGenerator.GetUriByName(HttpContext, nameof(GetEpisodes), new { page, pageSize, orderBy, Id = id });
+            return result;
         }
 
         public string GetUrl(Episode episode)

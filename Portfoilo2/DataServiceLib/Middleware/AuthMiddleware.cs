@@ -54,7 +54,7 @@ namespace DataServiceLib.Middleware
 
                 var jwtToken = validatedToken as JwtSecurityToken;
 
-                var claim = jwtToken.Claims.FirstOrDefault(x => x.Type == "id");
+                var claim = jwtToken.Claims.FirstOrDefault(x => x.Type == "nameid");
                 Console.WriteLine("har vi et claim?");
                 if (claim != null)
                 {

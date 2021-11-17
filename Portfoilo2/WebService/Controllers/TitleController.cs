@@ -30,16 +30,16 @@ namespace WebService.Controllers
         }
 
         //eksempel på stuff der skal have Authorization...
-        //[Authorization]
+        [Authorization]
         [HttpGet("{id}", Name = nameof(GetTitle))]
         public IActionResult GetTitle(string id)
         {
             Console.WriteLine("test fra titleController");
-            //try
-            //{
-                //her wrong?
-                //var user = Request.HttpContext.Items["User"] as User;
-                //Console.WriteLine($"Current user: {user}");
+            try
+            {
+              //her wrong?
+                var user = Request.HttpContext.Items["User"] as User;
+                Console.WriteLine($"Current user: {user}");
 
                 var title = _dataService.GetTitle(id);
                 if (title == null)
@@ -50,11 +50,11 @@ namespace WebService.Controllers
                 var model = CreateTitleViewModel(title);
                 return Ok(model);
 
-            //}
-            //catch (Exception)
-            //{
-            //    return Unauthorized("User not authorized...");
-            //}
+            }
+            catch (Exception)
+            {
+                return Unauthorized("User not authorized...");
+            }
         }
 
         public string GetUrl(Title title)
