@@ -7,9 +7,17 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
+using Microsoft.AspNetCore.Builder;
 
 namespace DataServiceLib.Middleware
 {
+    public static class AuthMiddlewareExtension
+    {
+        public static IApplicationBuilder UseJwtAuth(this IApplicationBuilder builder)
+        {
+            return builder.UseMiddleware<AuthMiddleware>();
+        }
+    }
     public class AuthMiddleware
     {
         private readonly RequestDelegate _next;

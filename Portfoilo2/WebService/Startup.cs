@@ -9,6 +9,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using DataServiceLib;
+using DataServiceLib.Middleware;
 
 namespace WebService
 {
@@ -43,6 +44,8 @@ namespace WebService
             }
 
             app.UseRouting();
+
+            app.UseJwtAuth();
 
             app.UseCors(x => x
                 .AllowAnyMethod()

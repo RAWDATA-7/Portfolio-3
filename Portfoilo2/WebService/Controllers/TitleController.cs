@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Routing;
 using WebService.ViewModels;
 using DataServiceLib.Domain;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 using System;
 
@@ -28,18 +29,28 @@ namespace WebService.Controllers
         }
 
         [HttpGet("{id}", Name = nameof(GetTitle))]
+        [Authorize]//Authorization?? ingen ved det... Alle snakker om det, tror jeg - not sure tho
         public IActionResult GetTitle(string id)
         {
-            var title = _dataService.GetTitle(id);
-
-            if (title == null)
+            try
             {
-                return NotFound();
+                //Pull user from HTTP header (måske dette kan bruges til bookmarking User.List<bookmark>.addbookmark(titleId) or sumtin)
+                var user = Request.HttpContext.Items["User"] as User;
+                Console.WriteLine($"Current user: {user.Name}");
+
+                var title = _dataService.GetTitle(id);
+                if (title == null)
+                {
+                    return NotFound("Title not found...");
+                }
+                var model = CreateTitleViewModel(title);
+                return Ok(model);
+
             }
-
-            var model = CreateTitleViewModel(title);
-
-            return Ok(model);
+            catch (Exception)
+            {
+                return Unauthorized("User not authorized...");
+            }
         }
 
         public string GetUrl(Title title)
