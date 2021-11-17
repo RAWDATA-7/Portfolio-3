@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Authorization;
 using System.Collections.Generic;
 using System;
+using DataServiceLib.Attributes;
 
 namespace WebService.Controllers
 {
@@ -28,8 +29,9 @@ namespace WebService.Controllers
             _mapper = mapper;
         }
 
+        //eksempel på stuff der skal have Authorization...
         [HttpGet("{id}", Name = nameof(GetTitle))]
-        [Authorize]//Authorization?? ingen ved det... Alle snakker om det, tror jeg - not sure tho
+        [Authorization]
         public IActionResult GetTitle(string id)
         {
             try
