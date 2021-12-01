@@ -15,6 +15,10 @@ require(['knockout'], (ko) => {
         viewModel: { require: "components/bestratedtitles/bestRatedTitles" },
         template: { require: "text!components/bestratedtitles/bestRatedTitles.html" }
     });
+    ko.components.register("post-newuser", {
+        viewModel: { require: "components/users/createUser" },
+        template: { require: "text!components/users/createUser.html" }
+    });
 });
 require(["knockout", "viewmodel"], function (ko, vm) {
     ko.applyBindings(vm);
