@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\WebService\\WebService.csproj": {}
+    "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\WebService\\WebService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj": {
+    "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
+        "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
         "projectName": "DataServiceLib",
-        "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
+        "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
         "packagesPath": "C:\\Users\\JesperBlom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\obj\\",
+        "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JesperBlom\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -84,14 +84,14 @@
         }
       }
     },
-    "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\WebService\\WebService.csproj": {
+    "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\WebService\\WebService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\WebService\\WebService.csproj",
+        "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\WebService\\WebService.csproj",
         "projectName": "WebService",
-        "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\WebService\\WebService.csproj",
+        "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\WebService\\WebService.csproj",
         "packagesPath": "C:\\Users\\JesperBlom\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\WebService\\obj\\",
+        "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\WebService\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JesperBlom\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -108,8 +108,8 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
-              "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj": {
-                "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj"
+              "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj": {
+                "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj"
               }
             }
           }

@@ -9735,11 +9735,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\XUnitTest\\XUnitTest.csproj",
+      "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\XUnitTest\\XUnitTest.csproj",
       "projectName": "XUnitTest",
-      "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\XUnitTest\\XUnitTest.csproj",
+      "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\XUnitTest\\XUnitTest.csproj",
       "packagesPath": "C:\\Users\\JesperBlom\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\XUnitTest\\obj\\",
+      "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\XUnitTest\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\JesperBlom\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -9756,11 +9756,11 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj": {
-              "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj"
+            "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj": {
+              "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj"
             },
-            "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\WebService\\WebService.csproj": {
-              "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\WebService\\WebService.csproj"
+            "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\WebService\\WebService.csproj": {
+              "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\WebService\\WebService.csproj"
             }
           }
         }

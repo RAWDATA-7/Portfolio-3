@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ncGP8K6mFs/AMoWrFe8y62DBEmDALBt5XaqVfhedFc9Bplrzu2NX+owsXgrGd0wOq9u9fZfwcvlMqV7/XLShbA==",
+  "dgSpecHash": "kd6Rm6juZK3GUEs3yjnjSGBXiWnvPkqE4t17OgJT1NN2y0PiWU1WcDJx/ZoYI32ASbufmDfPMLGvJ9bLkED5IA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\XUnitTest\\XUnitTest.csproj",
+  "projectFilePath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\XUnitTest\\XUnitTest.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JesperBlom\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\JesperBlom\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",

@@ -7982,11 +7982,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
+      "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
       "projectName": "DataServiceLib",
-      "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
+      "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
       "packagesPath": "C:\\Users\\JesperBlom\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\obj\\",
+      "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\JesperBlom\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -22,3 +22,15 @@ C:\Users\sfsto\Documents\GitHub\Portfolio2\Portfoilo2\DataServiceLib\obj\Debug\n
 C:\Users\sfsto\Documents\GitHub\Portfolio2\Portfoilo2\DataServiceLib\obj\Debug\net5.0\DataServiceLib.dll
 C:\Users\sfsto\Documents\GitHub\Portfolio2\Portfoilo2\DataServiceLib\obj\Debug\net5.0\ref\DataServiceLib.dll
 C:\Users\sfsto\Documents\GitHub\Portfolio2\Portfoilo2\DataServiceLib\obj\Debug\net5.0\DataServiceLib.pdb
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\bin\Debug\net5.0\DataServiceLib.deps.json
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\bin\Debug\net5.0\DataServiceLib.dll
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\bin\Debug\net5.0\ref\DataServiceLib.dll
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\bin\Debug\net5.0\DataServiceLib.pdb
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\obj\Debug\net5.0\DataServiceLib.csproj.AssemblyReference.cache
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\obj\Debug\net5.0\DataServiceLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\obj\Debug\net5.0\DataServiceLib.AssemblyInfoInputs.cache
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\obj\Debug\net5.0\DataServiceLib.AssemblyInfo.cs
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\obj\Debug\net5.0\DataServiceLib.csproj.CoreCompileInputs.cache
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\obj\Debug\net5.0\DataServiceLib.dll
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\obj\Debug\net5.0\ref\DataServiceLib.dll
+C:\Users\JesperBlom\hello\Portfolio-3\Portfoilo2\DataServiceLib\obj\Debug\net5.0\DataServiceLib.pdb

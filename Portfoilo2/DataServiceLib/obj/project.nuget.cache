@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "gpVq6Ug3ZjKfrfYGL4A94e2M/sB7f0u7+0vCWAf2MxcNOS+cmQbDpYx1Yh4a75yrmqW8lLFKLfrLxx+hHhdMcg==",
+  "dgSpecHash": "OPXV5NWE4Moj7Xrum3Ww0Ku3w+8NuXruPsSmVe3llof6IHCKL9Ap2j4wYnbaZIZahRg6W6dSq4TaT/7/CdwOrQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
+  "projectFilePath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\DataServiceLib\\DataServiceLib.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JesperBlom\\.nuget\\packages\\microsoft.aspnetcore.antiforgery\\2.2.0\\microsoft.aspnetcore.antiforgery.2.2.0.nupkg.sha512",
     "C:\\Users\\JesperBlom\\.nuget\\packages\\microsoft.aspnetcore.authentication.abstractions\\2.2.0\\microsoft.aspnetcore.authentication.abstractions.2.2.0.nupkg.sha512",

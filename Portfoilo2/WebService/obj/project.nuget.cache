@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "W0TPhC3PlRIYqcHifmNLpZqJpHD9CRbh2+DBJpCeG5h/VQCrZYdY2j+hPxZXjF1rQQ6nmO4CRYHTclRscQIGwQ==",
+  "dgSpecHash": "3qPj/IhAaoB1n0O6xS3oZoLuZy7KVBmFew4SrW89Sl3w+5E1rgBakcWiBfwfOmF1B6hkbdSkrA3+MVaggFBtyA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\JesperBlom\\hello\\Portfolio2\\Portfoilo2\\WebService\\WebService.csproj",
+  "projectFilePath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfoilo2\\WebService\\WebService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JesperBlom\\.nuget\\packages\\automapper\\10.1.1\\automapper.10.1.1.nupkg.sha512",
     "C:\\Users\\JesperBlom\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\8.1.1\\automapper.extensions.microsoft.dependencyinjection.8.1.1.nupkg.sha512",
