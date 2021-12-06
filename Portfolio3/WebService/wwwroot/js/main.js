@@ -1,9 +1,11 @@
-﻿require.config({
+﻿
+require.config({
     baseUrl: 'js',
     paths: {
         text: "lib/requirejs/text",
         jquery: "lib/jquery/dist/jquery.min",
         knockout: "lib/knockout/build/output/knockout-latest.debug",
+        bootstrap: "../css/lib/bootstrap/dist/js/bootstrap.bundle.min",
         dataService: "services/dataService",
         postman: "services/postman"
     }

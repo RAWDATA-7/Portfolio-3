@@ -2,16 +2,30 @@
 
 <table class="table">
     <thead>
-        <tr><th>total</th><th>prev</th><th>current</th><th>next</th><th>items</th></tr>
+        <tr><th>URL</th><th>ID</th><th>Name</th><th>Rating</th></tr>
     </thead>
     <tbody data-bind="foreach: bestratedtitles">
         <tr>
-            <!-->der er noget galt her-->
-            <td data-bind="text: total"></td>
-            <td data-bind="text: prev"></td>
-            <td data-bind="text: current"></td>
-            <td data-bind="text: next"></td>
-            <td data-bind="text: items"></td>
+            <td>
+                <div data-bind="foreach: items">
+                    <div data-bind="text: url"></div>
+                </div>
+            </td>
+            <td>
+                <div data-bind="foreach: items">
+                    <div data-bind="text: id"></div>
+                </div>
+            </td>
+            <td>
+                <div data-bind="foreach: items">
+                    <div data-bind="text: name"></div>
+                </div>
+            </td>
+            <td>
+                <div data-bind="foreach: items">
+                    <div data-bind="text: rating"></div>
+                </div>
+            </td>
         </tr>
     </tbody>
 </table>
