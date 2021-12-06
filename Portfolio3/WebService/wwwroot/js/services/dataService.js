@@ -6,6 +6,12 @@
             .then(json => callback(json));
     };
 
+    let getBestRatedActors = (callback) => {
+        fetch("api/BestRatedActor")
+            .then(response => response.json())
+            .then(json => callback(json));
+    };
+
 
     let newUserDS = (user, callback) => {
         let param = {
@@ -22,6 +28,7 @@
 
     return {
         getBestRatedTitles,
+        getBestRatedActors,
         newUserDS
     }
 });

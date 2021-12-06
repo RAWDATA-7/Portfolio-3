@@ -17,6 +17,7 @@
                 sex: sex(),
                 plaintxtpwd: plaintxtpwd()
             });
+            postman.publish("changeView", "get-bestratedtitles");
         }
 
         postman.subscribe("newUser", user => {

@@ -1,10 +1,10 @@
-﻿﻿<h1>Best Rated Titles</h1>
+﻿﻿<h1>Best Rated Actors</h1>
 
 <table class="table">
     <thead>
         <tr><th>URL</th><th>ID</th><th>Name</th><th>Rating</th></tr>
     </thead>
-    <tbody data-bind="foreach: bestratedtitles">
+    <tbody data-bind="foreach: bestratedactors">
         <tr>
             <td>
                 <div data-bind="foreach: items">
@@ -29,7 +29,7 @@
         </tr>
     </tbody>
 </table>
-<div data-bind="foreach: bestratedtitles">
+<div data-bind="foreach: bestratedactors">
     <li data-bind="text:total"></li>
     <li data-bind="text:prev"></li>
     <li data-bind="text:current"></li>
