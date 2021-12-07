@@ -1,9 +1,15 @@
 ﻿define([], () => {
+    let getJson = (url, callback) => {
+        fetch(url).then(response => response.json()).then(callback);
+    };
 
-    let getBestRatedTitles = (callback) => {
-        fetch("api/BestRatedTitles")
-            .then(response => response.json())
-            .then(json => callback(json));
+
+
+    let getBestRatedTitles = (url, callback) => {
+        if (url === undefined) {
+            url = "api/BestRatedTitles";
+        }
+        getJson(url, callback);
     };
 
     let getBestRatedActors = (callback) => {
@@ -11,6 +17,8 @@
             .then(response => response.json())
             .then(json => callback(json));
     };
+
+
 
 
     let newUserDS = (user, callback) => {

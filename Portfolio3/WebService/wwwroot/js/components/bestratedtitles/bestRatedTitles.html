@@ -2,36 +2,21 @@
 
 <table class="table">
     <thead>
-        <tr><th>URL</th><th>ID</th><th>Name</th><th>Rating</th></tr>
+        <tr><th>Image</th><th>URL</th><th>ID</th><th>Name</th><th>Rating</th></tr>
     </thead>
     <tbody data-bind="foreach: bestratedtitles">
         <tr>
-            <td>
-                <div data-bind="foreach: items">
-                    <div data-bind="text: url"></div>
-                </div>
-            </td>
-            <td>
-                <div data-bind="foreach: items">
-                    <div data-bind="text: id"></div>
-                </div>
-            </td>
-            <td>
-                <div data-bind="foreach: items">
-                    <div data-bind="text: name"></div>
-                </div>
-            </td>
-            <td>
-                <div data-bind="foreach: items">
-                    <div data-bind="text: rating"></div>
-                </div>
-            </td>
+            <td><img width="100" height="120" data-bind="attr: { src: image }"></td>
+            <td data-bind="text: url"></td>
+            <td data-bind="text: id"></td>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: rating"></td>
         </tr>
     </tbody>
 </table>
-<div data-bind="foreach: bestratedtitles">
-    <li data-bind="text:total"></li>
-    <li data-bind="text:prev"></li>
-    <li data-bind="text:current"></li>
-    <li data-bind="text:next"></li>
+<div class="navigation-buttons">
+    <button data-bind="click: showPrev", enable: enablePrev>Prev</button>
+    <button data-bind="click: showNext">Next</button>
 </div>
+
+<br/>

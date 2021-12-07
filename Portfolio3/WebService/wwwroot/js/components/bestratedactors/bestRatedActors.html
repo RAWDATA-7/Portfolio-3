@@ -1,31 +1,15 @@
 ﻿﻿<h1>Best Rated Actors</h1>
 
-<table class="table">
+<table class="table table-hover"data-bind="foreach: bestratedactors">
     <thead>
         <tr><th>URL</th><th>ID</th><th>Name</th><th>Rating</th></tr>
     </thead>
-    <tbody data-bind="foreach: bestratedactors">
+    <tbody data-bind="foreach: items">
         <tr>
-            <td>
-                <div data-bind="foreach: items">
-                    <div data-bind="text: url"></div>
-                </div>
-            </td>
-            <td>
-                <div data-bind="foreach: items">
-                    <div data-bind="text: id"></div>
-                </div>
-            </td>
-            <td>
-                <div data-bind="foreach: items">
-                    <div data-bind="text: name"></div>
-                </div>
-            </td>
-            <td>
-                <div data-bind="foreach: items">
-                    <div data-bind="text: rating"></div>
-                </div>
-            </td>
+            <td data-bind="text: url"></td>
+            <td data-bind="text: id"></td>
+            <td data-bind="text: name"></td>
+            <td data-bind="text: rating"></td>
         </tr>
     </tbody>
 </table>

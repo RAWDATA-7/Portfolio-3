@@ -154,6 +154,7 @@ namespace DataServiceLib
             modelBuilder.Entity<FindCoActor>().Property(x => x.Id).HasColumnName("nameid");
 
             modelBuilder.Entity<BestRatedTitle>().HasNoKey();
+            modelBuilder.Entity<BestRatedTitle>().Property(x => x.Image).HasColumnName("image");
             modelBuilder.Entity<BestRatedTitle>().Property(x => x.Id).HasColumnName("titleid");
             modelBuilder.Entity<BestRatedTitle>().Property(x => x.Name).HasColumnName("titlename");
             modelBuilder.Entity<BestRatedTitle>().Property(x => x.Rating).HasColumnName("avgrating");

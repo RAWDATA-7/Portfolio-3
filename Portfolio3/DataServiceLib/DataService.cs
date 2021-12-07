@@ -73,7 +73,7 @@ namespace DataServiceLib
             return ctx.Titles.Where(x => x.Id == tId).ToList();
         }
 
-        // BestRatedTitles Que pasa?
+        // BestRatedTitles
         public int NumberOfTitles()
         {
             var ctx = new IMDbContext();
