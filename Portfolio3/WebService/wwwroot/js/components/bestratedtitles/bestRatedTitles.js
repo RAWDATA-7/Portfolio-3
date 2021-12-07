@@ -7,6 +7,8 @@
 
         let next = ko.observable();
 
+        let title = ko.observable();
+
         let getData = url => {
             ds.getBestRatedTitles(url, data => {
                 prev(data.prev || undefined);
@@ -29,6 +31,13 @@
 
         let enableNext = ko.computed(() => next() !== undefined);
 
+        let goToTitle = (data, callback) => {
+            console.log(data);
+            fetch(data.url).then(response => response.json).then(json => callback);
+            console.log(callback)
+            console.log(title);
+            postman.publish("changeView", "get-titleinfo");
+        }
 
         getData();
 
@@ -37,6 +46,7 @@
             showPrev,
             enablePrev,
             enableNext,
+            goToTitle,
             showNext
         };
     };

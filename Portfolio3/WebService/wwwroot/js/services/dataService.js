@@ -1,9 +1,8 @@
 ﻿define([], () => {
+
     let getJson = (url, callback) => {
         fetch(url).then(response => response.json()).then(callback);
     };
-
-
 
     let getBestRatedTitles = (url, callback) => {
         if (url === undefined) {
@@ -12,14 +11,16 @@
         getJson(url, callback);
     };
 
+    let getTitle = (url, callback) => {
+        getJson(url, callback);
+    }
+
     let getBestRatedActors = (url, callback) => {
         if (url === undefined) {
             url = "api/BestRatedActor";
         }
         getJson(url, callback);
     };
-
-
 
 
     let newUserDS = (user, callback) => {
@@ -38,6 +39,7 @@
     return {
         getBestRatedTitles,
         getBestRatedActors,
+        getTitle,
         newUserDS
     }
 });

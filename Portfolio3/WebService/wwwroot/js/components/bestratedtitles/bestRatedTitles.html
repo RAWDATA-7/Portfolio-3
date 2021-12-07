@@ -1,11 +1,11 @@
 ﻿﻿<h1>Best Rated Titles</h1>
 
-<table class="table">
+<table class="table table-hover">
     <thead>
         <tr><th>Image</th><th>URL</th><th>ID</th><th>Name</th><th>Rating</th></tr>
     </thead>
     <tbody data-bind="foreach: bestratedtitles">
-        <tr>
+        <tr data-bind="click: $parent.goToTitle">
             <td><img width="75" height="105" data-bind="attr: { src: image }"></td>
             <td data-bind="text: url"></td>
             <td data-bind="text: id"></td>
