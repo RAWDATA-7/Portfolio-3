@@ -12,10 +12,11 @@
         getJson(url, callback);
     };
 
-    let getBestRatedActors = (callback) => {
-        fetch("api/BestRatedActor")
-            .then(response => response.json())
-            .then(json => callback(json));
+    let getBestRatedActors = (url, callback) => {
+        if (url === undefined) {
+            url = "api/BestRatedActor";
+        }
+        getJson(url, callback);
     };
 
 

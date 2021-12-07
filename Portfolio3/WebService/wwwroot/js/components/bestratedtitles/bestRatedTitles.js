@@ -10,7 +10,7 @@
         let getData = url => {
             ds.getBestRatedTitles(url, data => {
                 prev(data.prev || undefined);
-                next(data.next);
+                next(data.next || undefined);
                 bestratedtitles(data.items);
             });
         }
@@ -27,7 +27,7 @@
             getData(next());
         }
 
-        //let enableNext = ko.computed(() => next() !== null);
+        let enableNext = ko.computed(() => next() !== undefined);
 
 
         getData();
@@ -36,7 +36,7 @@
             bestratedtitles,
             showPrev,
             enablePrev,
-            //enableNext,
+            enableNext,
             showNext
         };
     };
