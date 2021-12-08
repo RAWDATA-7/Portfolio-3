@@ -1,9 +1,13 @@
 ﻿define(['knockout', 'dataService', 'postman'], function (ko, ds, postman) {
     return function (params) {
 
-        let actor = ko.observableArray([]);
+        let actor = ko.observable();
 
-        ds.getActor(id, actor);
+        postman.subscribe("showView", url => {
+            ds.getActor(url, a => {
+                actor(a);
+            });
+        })
 
         return {
             actor

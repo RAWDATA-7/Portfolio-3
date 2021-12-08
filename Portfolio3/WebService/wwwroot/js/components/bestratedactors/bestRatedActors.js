@@ -29,6 +29,10 @@ define(['knockout', 'dataService', 'postman'], function (ko, ds, postman) {
 
         let enableNext = ko.computed(() => next() !== undefined);
 
+        let goToActor = (data) => {
+            postman.publish("changeView", { view: "get-actorinfo", url: data.url });
+        }
+
 
         getData();
 
@@ -36,6 +40,7 @@ define(['knockout', 'dataService', 'postman'], function (ko, ds, postman) {
             bestratedactors,
             showPrev,
             enablePrev,
+            goToActor,
             enableNext,
             showNext
         };

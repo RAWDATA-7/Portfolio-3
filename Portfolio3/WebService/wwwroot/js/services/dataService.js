@@ -11,7 +11,19 @@
         getJson(url, callback);
     };
 
+    let getEpisode = (url, callback) => {
+        getJson(url, callback);
+    };
+
+    let getEpisodes = (url, callback) => {
+        getJson(url, callback);
+    };
+
     let getTitle = (url, callback) => {
+        getJson(url, callback);
+    }
+
+    let getActor = (url, callback) => {
         getJson(url, callback);
     }
 
@@ -40,6 +52,9 @@
         getBestRatedTitles,
         getBestRatedActors,
         getTitle,
+        getActor,
+        getEpisodes,
+        getEpisode,
         newUserDS
     }
 });

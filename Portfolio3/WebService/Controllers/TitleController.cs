@@ -45,8 +45,8 @@ namespace WebService.Controllers
         private TitleViewModel CreateTitleViewModel(Title title)
         {
             var model = _mapper.Map<TitleViewModel>(title);
-            model.Url = GetUrl(title);
-            model.Genres = _dataService.GetGenres(title.Id).Select(x => x.Name).ToList();
+            model.Url = GetUrl(title); 
+            model.Genres = title.Genres.Select(x => x.Name).ToList();
             model.Rating = _dataService.GetRating(title.Id).AvgRating;
             model.NumVotes = _dataService.GetRating(title.Id).NumVotes;
             model.AkaUrl = _linkGenerator.GetUriByName(HttpContext, nameof(AkaController.GetAkas), new { title.Id });
@@ -58,7 +58,7 @@ namespace WebService.Controllers
                 model.PopularActors.Add(c.ActorId);
             }
             model.PopularActors.RemoveRange(0, count);
-            if (model.Type == "tvSeries")
+            if (model.Type == "tvSeries" || model.Type == "tvMiniSeries")
             {
                 model.EpisodesUrl = _linkGenerator.GetUriByName(HttpContext, nameof(EpisodesController.GetEpisodes), new { title.Id });
             }

@@ -63,6 +63,7 @@ namespace DataServiceLib
         {
             var ctx = new IMDbContext();
             var title = ctx.Titles.FirstOrDefault(x => x.Id == tId);
+            title.Genres = GetGenres(tId);
             title.PopularActors = GetPopularActors(tId);
             return title;
         }

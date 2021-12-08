@@ -1,1 +1,10 @@
-﻿<h2>Titlepage</h2>
+﻿<div data-bind="with: title">
+    <h2 data-bind="text: primaryTitle"></h2>
+    <img width="75" height="105" data-bind="attr: { src: poster }">
+    <div data-bind="click: $parent.goToEpisodes">
+        <div data-bind="text: episodesUrl"></div>
+    </div>
+    <div data-bind="click: $parent.goToParent">
+        <div data-bind="text: parentUrl"></div>
+    </div>
+</div>

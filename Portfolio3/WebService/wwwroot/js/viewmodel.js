@@ -19,7 +19,10 @@
 
 
     postman.subscribe("changeView", function (data) {
-        currentView(data);
+        currentView(data.view);
+        if (data.url) {
+            postman.publish("showView", data.url);
+        }
     });
 
     return {

@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using DataServiceLib.Domain;
 
 namespace WebService.ViewModels
 {

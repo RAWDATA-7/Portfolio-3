@@ -5,7 +5,7 @@
         <tr><th>URL</th><th>ID</th><th>Name</th><th>Rating</th></tr>
     </thead>
     <tbody data-bind="foreach: bestratedactors">
-        <tr>
+        <tr data-bind="click: $parent.goToActor">
             <td data-bind="text: url"></td>
             <td data-bind="text: id"></td>
             <td data-bind="text: name"></td>

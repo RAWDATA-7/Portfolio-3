@@ -31,12 +31,8 @@
 
         let enableNext = ko.computed(() => next() !== undefined);
 
-        let goToTitle = (data, callback) => {
-            console.log(data);
-            fetch(data.url).then(response => response.json).then(json => callback);
-            console.log(callback)
-            console.log(title);
-            postman.publish("changeView", "get-titleinfo");
+        let goToTitle = (data) => {
+                postman.publish("changeView", {view:"get-titleinfo", url: data.url});
         }
 
         getData();
