@@ -27,6 +27,10 @@
         getJson(url, callback);
     }
 
+    let getUserInfo = (userId, callback) => {
+        getJson("api/User/12", callback);
+    }
+
     let getBestRatedActors = (url, callback) => {
         if (url === undefined) {
             url = "api/BestRatedActor";
@@ -48,6 +52,19 @@
             .then(json => callback(json));
     };
 
+    let userLogin = (userLogin, callback) => {
+        let param = {
+            method: "POST",
+            body: JSON.stringify(user),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        fetch("api/AuthUser/UserLogin", param)
+            .then(response => response.json())
+            .then(json => callback(json));
+    };
+
     return {
         getBestRatedTitles,
         getBestRatedActors,
@@ -55,6 +72,8 @@
         getActor,
         getEpisodes,
         getEpisode,
+        userLogin,
+        getUserInfo,
         newUserDS
     }
 });

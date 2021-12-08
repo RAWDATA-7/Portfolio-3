@@ -17,14 +17,14 @@
                 sex: sex(),
                 plaintxtpwd: plaintxtpwd()
             });
-            postman.publish("changeView", "get-bestratedtitles");
+            postman.publish("changeView", "get-userinfo");
         }
 
         postman.subscribe("newUser", user => {
             ds.newUserDS(user, newUser => {
                 //categories.push(newUser);
             });
-        }, "get-bestratedtitles");
+        }, "get-userinfo");
     
 
         return {
