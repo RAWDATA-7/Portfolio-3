@@ -143,7 +143,7 @@ namespace DataServiceLib
         public User GetUserFromUsername(string username)
         {
             var ctx = new IMDbContext();
-            return ctx.Users.FirstOrDefault(x => x.Name == username);
+            return ctx.Users.Include(b => b.Bookmarks).Include(sh => sh.SearchHistory).Include(ur => ur.UserRatings).FirstOrDefault(x => x.Name == username);
         }
 
         public void CreateUser (string name,
