@@ -5,9 +5,9 @@
 
 
     let menuItems = [
-        { title: "Create User", component: "post-newuser" },
         { title: "Titles", component: "get-bestratedtitles" },
         { title: "Actors", component: "get-bestratedactors" },
+        { title: "Create User", component: "post-newuser" },
         { title: "Login", component: "post-userlogin" },
     ];
 
