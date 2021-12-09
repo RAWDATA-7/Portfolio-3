@@ -1,6 +1,6 @@
 ﻿<div data-bind="with: title">
     <h2 data-bind="text: primaryTitle"></h2>
-    <img width="75" height="105" data-bind="attr: { src: poster }">
+    <img width="300" height="418" data-bind="attr: { src: poster }">
     <div data-bind="click: $parent.goToEpisodes">
         <div data-bind="text: episodesUrl"></div>
     </div>
@@ -9,7 +9,7 @@
     </div>
     <table class="table table-hover">
         <tbody data-bind="foreach: popularActors">
-            <tr data-bind="click: $parent.goToActor">
+            <tr data-bind="click: $parentContext.$parent.goToActor">
                 <td data-bind="text: $data"></td>
             </tr>
         </tbody>
