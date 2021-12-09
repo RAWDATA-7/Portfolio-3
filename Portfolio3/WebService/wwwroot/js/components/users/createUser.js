@@ -17,12 +17,12 @@
                 sex: sex(),
                 plaintxtpwd: plaintxtpwd()
             });
-            postman.publish("changeView", "get-userinfo");
+            postman.publish("changeViewUnhacked", "post-userlogin");
         }
 
         postman.subscribe("newUser", user => {
             ds.newUserDS(user, newUser => {
-                //categories.push(newUser);
+               
             });
         }, "get-userinfo");
     

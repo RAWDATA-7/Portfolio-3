@@ -4,13 +4,22 @@
         let name = ko.observable();
         let password = ko.observable();
 
-
+      
         let login = () => {
-            postman.publish("userLogin", {
+            ds.userLogin({
                 name: name(),
                 password: password(),
-            });
-            postman.publish("changeView", "get-userinfo");
+            }, data => {
+                if (data) {
+                    localStorage.setItem("user", data.name);
+                    localStorage.setItem("token", data.token);
+                }
+                else {
+                    localStorage.setItem("user", undefined);
+                    localStorage.setItem("token", undefined);
+                }
+                postman.publish("changeViewUnhacked", "get-userinfo");
+            })
         }
 
         postman.subscribe("userLogin", name => {
@@ -19,7 +28,7 @@
         }, "get-userinfo");
 
         let createUser = () => {
-            postman.publish("changeView", "post-newuser")
+            postman.publish("changeViewUnhacked", "post-newuser")
         }
 
         return {

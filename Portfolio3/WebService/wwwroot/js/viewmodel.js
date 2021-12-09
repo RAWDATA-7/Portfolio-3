@@ -1,6 +1,8 @@
 ﻿define(["knockout", "postman"], function (ko, postman) {
 
     let currentView = ko.observable("get-bestratedtitles");
+    let searchString = ko.observable();
+
 
     let menuItems = [
         { title: "Create User", component: "post-newuser" },
@@ -18,6 +20,16 @@
         return menuItem.component === currentView() ? "active" : "";
     }
 
+    let saveSearchString = () => {
+        localStorage.setItem("searchString", searchString());
+        console.log(localStorage.getItem("searchString"));
+        postman.publish("changeViewUnhacked", "get-bestmatch");
+        }
+               
+
+    postman.subscribe("changeViewUnhacked", function (data) {
+        currentView(data);
+    });
 
     postman.subscribe("changeView", function (data) {
         currentView(data.view);
@@ -28,8 +40,10 @@
 
     return {
         currentView,
+        searchString,
         menuItems,
         changeContent,
+        saveSearchString,
         isActive
     }
 });

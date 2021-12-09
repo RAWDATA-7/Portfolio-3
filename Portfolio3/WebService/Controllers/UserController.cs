@@ -25,21 +25,21 @@ namespace WebService.Controllers
             _mapper = mapper;
         }
 
-        [HttpGet("{id}", Name = nameof(GetUser))]
-        public IActionResult GetUser(int id)
+        [HttpGet("{name}", Name = nameof(GetUser))]
+        public IActionResult GetUser(string name)
         {
             try
             {
                 var authUser = Request.HttpContext.Items["User"] as User;
                 Console.WriteLine($"Current user: {authUser}");
                 
-                var user = _dataService.GetUserFromId(id);
+                var user = _dataService.GetUserFromUsername(name);
                 
                 if (user == null)
                 {
                     return NotFound();
                 }
-                if (authUser.Id == id)
+                if (authUser.Id == user.Id)
                 {
                     var model = CreateUserViewModel(user);
 

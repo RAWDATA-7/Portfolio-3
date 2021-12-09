@@ -7,4 +7,11 @@
     <div data-bind="click: $parent.goToParent">
         <div data-bind="text: parentUrl"></div>
     </div>
+    <table class="table table-hover">
+        <tbody data-bind="foreach: popularActors">
+            <tr data-bind="click: $parent.goToActor">
+                <td data-bind="text: $data"></td>
+            </tr>
+        </tbody>
+    </table>
 </div>

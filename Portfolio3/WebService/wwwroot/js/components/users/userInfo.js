@@ -3,7 +3,10 @@
 
         let user = ko.observable();
 
-        user(ds.getUserInfo("6"));
+        ds.getUserInfo(data => {
+            user(data);
+            localStorage.setItem("id", data.id);
+        });
 
         return {
             user

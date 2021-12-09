@@ -27,9 +27,18 @@
         getJson(url, callback);
     }
 
-    let getUserInfo = (userId, callback) => {
-        getJson("api/User/12", callback);
-    }
+    let getUserInfo = (callback) => {
+        let param = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": "Bearer " + localStorage.getItem("token")
+            }
+        }
+        fetch("api/User/" + localStorage.getItem("user"), param)
+            .then(response => response.json())
+            .then(json => callback(json));
+    };
 
     let getBestRatedActors = (url, callback) => {
         if (url === undefined) {
@@ -38,6 +47,11 @@
         getJson(url, callback);
     };
 
+
+    let getBestMatch = (callback) => {
+        url = "api/BestMatch?uId=" + localStorage.getItem("id") + "&searchString=" + localStorage.getItem("searchString") + "&field=f"
+        getJson(url, callback);
+    };
 
     let newUserDS = (user, callback) => {
         let param = {
@@ -55,13 +69,18 @@
     let userLogin = (userLogin, callback) => {
         let param = {
             method: "POST",
-            body: JSON.stringify(user),
+            body: JSON.stringify(userLogin),
             headers: {
                 "Content-Type": "application/json"
             }
         }
         fetch("api/AuthUser/UserLogin", param)
-            .then(response => response.json())
+            .then(response => {
+                if (response.status !== 200) {
+                    return undefined;
+                }
+                return response.json();
+            })
             .then(json => callback(json));
     };
 
@@ -74,6 +93,7 @@
         getEpisode,
         userLogin,
         getUserInfo,
+        getBestMatch,
         newUserDS
     }
 });

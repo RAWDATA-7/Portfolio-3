@@ -17,11 +17,15 @@
             postman.publish("changeView", { view: "get-bestratedtitles" });
             postman.publish("changeView", { view: "get-titleinfo", url: data.parentUrl });
         }
+        let goToActor = (data) => {
+            postman.publish("changeView", { view: "get-actorinfo", url: data });
+        }
 
         return {
             title,
             goToEpisodes,
-            goToParent
+            goToParent,
+            goToActor
         };
     };
 });

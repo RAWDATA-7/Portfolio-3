@@ -17,13 +17,14 @@
                 </li>
             </ul>
             <form class="navbar-search pull-left">
-                <input type="text" class="search-query" placeholder="Search">
+                <input type="text" class="search-query" placeholder="Search" data-bind="value: searchString">
+                <button data-bind="click: saveSearchString">Search</button>
             </form>
+            
         </div>
     </nav>
 
     <div data-bind="component: {name: currentView}"></div>
-
 
     <script data-main="js/main.js" src="js/lib/requirejs/require.js"></script>
 </body>

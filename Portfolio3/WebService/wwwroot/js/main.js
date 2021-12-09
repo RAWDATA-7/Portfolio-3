@@ -10,7 +10,6 @@ require.config({
         postman: "services/postman"
     }
 });
-
 // component registration
 require(['knockout'], (ko) => {
     ko.components.register("get-bestratedtitles", {
@@ -53,7 +52,12 @@ require(['knockout'], (ko) => {
         viewModel: { require: "components/bestratedactors/bestRatedActors" },
         template: { require: "text!components/bestratedactors/bestRatedActors.html" }
     });
+    ko.components.register("get-bestmatch", {
+        viewModel: { require: "components/bestmatch/bestMatch" },
+        template: { require: "text!components/bestmatch/bestMatch.html" }
+    });
 });
 require(["knockout", "viewmodel", "bootstrap"], function (ko, vm) {
     ko.applyBindings(vm);
+    
 });
