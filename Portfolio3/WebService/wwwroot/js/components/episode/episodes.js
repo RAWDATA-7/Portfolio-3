@@ -9,7 +9,7 @@
         let next = ko.observable();
 
         let goToEpisode = (data) => {
-            postman.publish("changeView", { view: "get-episodeinfo", url: data.url });
+            postman.publish("changeView", { view: "get-titleinfo", url: "https://localhost:5001/api/Title/" + data.id });
         }
 
         let getData = url => {

@@ -20,10 +20,6 @@ require(['knockout'], (ko) => {
         viewModel: { require: "components/episode/episodes" },
         template: { require: "text!components/episode/episodes.html" }
     });
-    ko.components.register("get-episodeinfo", {
-        viewModel: { require: "components/episode/episodeInfo" },
-        template: { require: "text!components/episode/episodeInfo.html" }
-    });
     ko.components.register("post-userlogin", {
         viewModel: { require: "components/users/userLogin" },
         template: { require: "text!components/users/userLogin.html" }

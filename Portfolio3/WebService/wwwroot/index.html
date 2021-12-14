@@ -5,7 +5,9 @@
     <link href="css/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body class="container-fluid">
+    
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <img width="90" height="40" src="pictures/adas.png" />
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto" data-bind="foreach: menuItems">
                 <li class="nav-item">
@@ -15,10 +17,10 @@
                 </li>
             </ul>
             <form class="navbar-search pull-left d-flex">
-                <input  class="form-control me-sm-2" type="text" placeholder="Search" data-bind="value: searchString">
+                <input class="form-control me-sm-2" type="text" placeholder="Search" data-bind="value: searchString">
                 <button class="btn btn-secondary my-2 my-sm-0" data-bind="click: saveSearchString">Search</button>
             </form>
-            
+
         </div>
     </nav>
 
