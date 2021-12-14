@@ -11,7 +11,7 @@ namespace WebService.Controllers
 {
     [ApiController]
     [Route("api/User")]
-    //[Authorization]
+    [Authorization]
     public class UserController : ControllerBase
     {
         private readonly IDataService _dataService;
