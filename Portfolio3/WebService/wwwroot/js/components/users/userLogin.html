@@ -1,8 +1,17 @@
 ﻿﻿<h1>Login</h1>
 
- <div class="col-6">
-     Username: <input class="form-control" data-bind="value: name" required />
-     Password: <input class="form-control" data-bind="value: password" />
-     <button data-bind="click: login" class="btn btn-primary">Login</button>
-     <button data-bind="click: createUser" class="btn btn-primary">Create User</button>
- </div> 
+
+ <div class="form-group">
+     <label class="form-label mt-4"></label>
+     <div class="form-floating mb-3">
+         <input type="text" class="form-control" id="floatingInput" placeholder="username" data-bind="value: name" required>
+         <label for="floatingInput">Username</label>
+     </div>
+     <div class="form-floating">
+         <input type="password" class="form-control" id="floatingPassword" placeholder="Password" data-bind="value: password">
+         <label for="floatingPassword">Password</label>
+     </div>
+     <br/>
+     <button data-bind="click: login" class="btn btn-secondary">Login</button>
+     <button data-bind="click: createUser" class="btn btn-info">Create User</button>
+ </div>
