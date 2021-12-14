@@ -2,7 +2,7 @@
 {
     public class UrlParam
     {
-        private int _pageSize = 10;
+        private int _pageSize = 12;
         public const int MaxPageSize = 25;
         public int Page { get; set; } = 0;
 
