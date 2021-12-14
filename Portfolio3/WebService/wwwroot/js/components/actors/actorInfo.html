@@ -1,13 +1,47 @@
 ﻿<div data-bind="with: actor">
     <h2 data-bind="text: name"></h2>
+    <p data-bind="text: birthYear +' - '+ deathYear"></p>
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-lg-3 col-xl-2">
+                <img class="img-fluid" src="../../../pictures/noface.png" />
+                <br />
+                <br />
+                <div class="fs-6 mb-3 float: text-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="Yellow" class="bi bi-star-fill" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"></path>
+                    </svg>
+                    <p data-bind="text: rating + ' / 10'"></p>
+                </div>
+            </div>
+            <div class="col-xl-2">
+                <h4>Professions</h4>
+                <ul data-bind="foreach: professions">
+                    <li data-bind="text: $data">
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-3 border border-5 border-secondary padding">
+                <h4>Filmography</h4>
+                <table class="table table-hover">
+                    <tbody data-bind="foreach: popularTitles">
+                        <tr data-bind="click: $parentContext.$parent.goToTitle">
+                            <td data-bind="text: $data"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
-    <table class="table table-hover">
-        <tbody data-bind="foreach: popularTitles">
-            <tr data-bind="click: $parentContext.$parent.goToTitle">
-                <td data-bind="text: $data"></td>
-            </tr>
-        </tbody>
-    </table>
+            <div class="col-xl-3 border border-5 border-secondary padding">
+                <h4>Related Actors</h4>
+                <table class="table table-hover">
+                    <tbody data-bind="foreach: coActors">
+                        <tr data-bind="click: $parentContext.$parent.goToActor">
+                            <td data-bind="text: $data"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
 </div>
-
-

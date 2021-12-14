@@ -13,9 +13,15 @@
             postman.publish("changeView", { view: "get-titleinfo", url: data });
         }
 
+        let goToActor = (data) => {
+            postman.publish("changeView", { view: "get-bestratedactors" });
+            postman.publish("changeView", { view: "get-actorinfo", url: data });
+        }
+
         return {
             actor,
-            goToTitle
+            goToTitle,
+            goToActor
         };
     };
 });
