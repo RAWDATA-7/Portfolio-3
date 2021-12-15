@@ -1,3 +1,46 @@
 ﻿<div data-bind="with: user">
-    Username: <div data-bind="text: name"></div>
-</div>
+    <h1>User Page</h1>
+    <div class="container-fluid padding">
+        <div class="row padding">
+            <div class="col-lg-2 col-xl-3">
+                <img class="img-fluid" src="../../../pictures/noface.png" />
+            </div>
+            <div class="col-lg-6 col-xl-3">
+                <h4>Username</h4>
+                <p data-bind="text: name"></p>
+                <h4>Full name</h4>
+                <p data-bind="text: firstName +' '+ lastName"></p>
+                <h4>Email</h4>
+                <p data-bind="text: email"></p>
+                <h4>Sex</h4>
+                <p data-bind="text: sex"></p>
+            </div>
+            <div class="col-lg-3 col-xl-3">
+                <h4>Search history</h4>
+                <table class="table table-hover border border-5 border-secondary">
+                    <tbody data-bind="foreach: searchHistory">
+                        <tr>
+                            <td data-bind="text: $data"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>Bookmarks</h4>
+                <table class="table table-hover border border-5 border-secondary">
+                    <tbody data-bind="foreach: bookmarks">
+                        <tr>
+                            <td data-bind="text: $data"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>User Ratings</h4>
+                <table class="table table-hover border border-5 border-secondary">
+                    <tbody data-bind="foreach: userRatings">
+                        <tr>
+                            <td data-bind="text: $data"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    </div>

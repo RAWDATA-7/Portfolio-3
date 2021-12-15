@@ -9,6 +9,7 @@
         { title: "Actors", component: "get-bestratedactors" },
         { title: "Create User", component: "post-newuser" },
         { title: "Login", component: "post-userlogin" },
+        { title: "User Page", component: "get-userinfo" },
     ];
 
     let changeContent = menuItem => {

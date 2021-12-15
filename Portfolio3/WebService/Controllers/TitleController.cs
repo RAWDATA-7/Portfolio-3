@@ -5,6 +5,7 @@ using DataServiceLib;
 using Microsoft.AspNetCore.Routing;
 using WebService.ViewModels;
 using DataServiceLib.Domain;
+using WebService.DTOs;
 
 namespace WebService.Controllers
 {
@@ -36,6 +37,22 @@ namespace WebService.Controllers
                 var model = CreateTitleViewModel(title);
                 return Ok(model);      
         }
+
+        [HttpPost("Bookmark")]
+        public IActionResult BookmarkTitle(BookmarkDTO bookmarkDTO)
+        {
+            _dataService.updateBookmarks(bookmarkDTO.uId, bookmarkDTO.tId);
+            return CreatedAtAction(null, bookmarkDTO.uId);
+        }
+
+
+        [HttpPost("Userrating")]
+        public IActionResult RateTitle(RatingDTO ratingDTO)
+        {
+            _dataService.updateUserRating(ratingDTO.uId, ratingDTO.tId, ratingDTO.rating);
+            return CreatedAtAction(null, ratingDTO.uId);
+        }
+
 
         public string GetUrl(Title title)
         {

@@ -11,6 +11,34 @@
         getJson(url, callback);
     };
 
+    let bookmarkTitle = (bookmark, callback) => {
+        let param = {
+            method: "POST",
+            body: JSON.stringify(bookmark),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        fetch("api/Title/Bookmark", param)
+            .then(response => response.json())
+            .then(json => callback(json));
+    };
+
+
+    let rateTitle = (rating, callback) => {
+        let param = {
+            method: "POST",
+            body: JSON.stringify(rating),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        }
+        fetch("api/Title/UserRating", param)
+            .then(response => response.json())
+            .then(json => callback(json));
+    };
+
+
     let getEpisode = (url, callback) => {
         getJson(url, callback);
     };
@@ -53,6 +81,7 @@
         getJson(url, callback);
     };
 
+
     let newUserDS = (user, callback) => {
         let param = {
             method: "POST",
@@ -94,6 +123,8 @@
         userLogin,
         getUserInfo,
         getBestMatch,
-        newUserDS
+        newUserDS,
+        bookmarkTitle,
+        rateTitle
     }
 });
