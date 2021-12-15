@@ -34,7 +34,7 @@ namespace DataServiceLib
         {
             base.OnConfiguring(optionsBuilder);
 
-        string path = System.IO.File.ReadAllText(@"C:\Users\JesperBlom\hello\Portfolio2\Portfoilo2\path.txt");
+        string path = System.IO.File.ReadAllText(@"C:\Users\JesperBlom\hello\Portfolio-3\Portfolio3\path.txt");
         //string path = System.IO.File.ReadAllText(@"C:\Users\sfsto\Documents\GitHub\Portfolio2\Portfoilo2\path.txt");
 
             optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
