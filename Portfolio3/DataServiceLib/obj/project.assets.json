@@ -7977,26 +7977,24 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\JesperBlom\\.nuget\\packages\\": {}
+    "C:\\Users\\ander\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfolio3\\DataServiceLib\\DataServiceLib.csproj",
+      "projectUniqueName": "C:\\Users\\ander\\Documents\\DOX\\RUC\\RAWDATA\\Portfolio3\\Portfolio-3\\Portfolio3\\DataServiceLib\\DataServiceLib.csproj",
       "projectName": "DataServiceLib",
-      "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfolio3\\DataServiceLib\\DataServiceLib.csproj",
-      "packagesPath": "C:\\Users\\JesperBlom\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfolio3\\DataServiceLib\\obj\\",
+      "projectPath": "C:\\Users\\ander\\Documents\\DOX\\RUC\\RAWDATA\\Portfolio3\\Portfolio-3\\Portfolio3\\DataServiceLib\\DataServiceLib.csproj",
+      "packagesPath": "C:\\Users\\ander\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\ander\\Documents\\DOX\\RUC\\RAWDATA\\Portfolio3\\Portfolio-3\\Portfolio3\\DataServiceLib\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\JesperBlom\\AppData\\Roaming\\NuGet\\NuGet.Config",
-        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        "C:\\Users\\ander\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net5.0"
       ],
       "sources": {
-        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
@@ -8055,7 +8053,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.403\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

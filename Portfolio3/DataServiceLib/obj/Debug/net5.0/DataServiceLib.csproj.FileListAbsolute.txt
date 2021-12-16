@@ -46,3 +46,15 @@ C:\Users\JesperBlom\hello\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0
 C:\Users\JesperBlom\hello\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\DataServiceLib.dll
 C:\Users\JesperBlom\hello\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\ref\DataServiceLib.dll
 C:\Users\JesperBlom\hello\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\DataServiceLib.pdb
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\bin\Debug\net5.0\DataServiceLib.deps.json
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\bin\Debug\net5.0\DataServiceLib.dll
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\bin\Debug\net5.0\ref\DataServiceLib.dll
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\bin\Debug\net5.0\DataServiceLib.pdb
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\DataServiceLib.csproj.AssemblyReference.cache
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\DataServiceLib.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\DataServiceLib.AssemblyInfoInputs.cache
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\DataServiceLib.AssemblyInfo.cs
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\DataServiceLib.csproj.CoreCompileInputs.cache
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\DataServiceLib.dll
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\ref\DataServiceLib.dll
+C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\DataServiceLib\obj\Debug\net5.0\DataServiceLib.pdb

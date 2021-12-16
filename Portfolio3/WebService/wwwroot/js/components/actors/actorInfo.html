@@ -3,8 +3,8 @@
     <p data-bind="text: birthYear +' - '+ deathYear"></p>
     <div class="container-fluid padding">
         <div class="row padding">
-            <div class="col-lg-3 col-xl-2">
-                <img class="img-fluid" src="../../../pictures/noface.png" />
+            <div class="col-lg-4 col-md-6 col-sm-12">
+                <img src="../../../pictures/noface.png" class="mx-auto d-block" />
                 <br />
                 <br />
                 <div class="fs-6 mb-3 float: text-center">
@@ -14,14 +14,14 @@
                     <p data-bind="text: rating + ' / 10'"></p>
                 </div>
             </div>
-            <div class="col-xl-2">
+            <div class="col-lg-3 col-md-6 col-sm-12">
                 <h4>Professions</h4>
                 <ul data-bind="foreach: professions">
                     <li data-bind="text: $data">
                     </li>
                 </ul>
             </div>
-            <div class="col-xl-3 border border-5 border-secondary padding">
+            <div class="col-lg-5 col-md-12 col-sm-12 padding">
                 <h4>Filmography</h4>
                 <table class="table table-hover">
                     <tbody data-bind="foreach: popularTitles">
@@ -32,7 +32,7 @@
                 </table>
             </div>
 
-            <div class="col-xl-3 border border-5 border-secondary padding">
+            <div class="col-lg-12 col-md-12 col-sm-12 border border-5 border-secondary padding">
                 <h4>Related Actors</h4>
                 <table class="table table-hover">
                     <tbody data-bind="foreach: coActors">
