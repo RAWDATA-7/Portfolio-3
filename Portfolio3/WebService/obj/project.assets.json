@@ -8174,19 +8174,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\sfsto\\.nuget\\packages\\": {}
+    "C:\\Users\\JesperBlom\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sfsto\\Documents\\GitHub\\Portfolio-3\\Portfolio3\\WebService\\WebService.csproj",
+      "projectUniqueName": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfolio3\\WebService\\WebService.csproj",
       "projectName": "WebService",
-      "projectPath": "C:\\Users\\sfsto\\Documents\\GitHub\\Portfolio-3\\Portfolio3\\WebService\\WebService.csproj",
-      "packagesPath": "C:\\Users\\sfsto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sfsto\\Documents\\GitHub\\Portfolio-3\\Portfolio3\\WebService\\obj\\",
+      "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfolio3\\WebService\\WebService.csproj",
+      "packagesPath": "C:\\Users\\JesperBlom\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfolio3\\WebService\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\sfsto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\JesperBlom\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -8200,8 +8200,8 @@
         "net5.0": {
           "targetAlias": "net5.0",
           "projectReferences": {
-            "C:\\Users\\sfsto\\Documents\\GitHub\\Portfolio-3\\Portfolio3\\DataServiceLib\\DataServiceLib.csproj": {
-              "projectPath": "C:\\Users\\sfsto\\Documents\\GitHub\\Portfolio-3\\Portfolio3\\DataServiceLib\\DataServiceLib.csproj"
+            "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfolio3\\DataServiceLib\\DataServiceLib.csproj": {
+              "projectPath": "C:\\Users\\JesperBlom\\hello\\Portfolio-3\\Portfolio3\\DataServiceLib\\DataServiceLib.csproj"
             }
           }
         }
@@ -8255,7 +8255,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.402\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.404\\RuntimeIdentifierGraph.json"
       }
     }
   },

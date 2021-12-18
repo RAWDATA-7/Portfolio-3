@@ -24,6 +24,7 @@
     let saveSearchString = () => {
         localStorage.setItem("searchString", searchString());
         console.log(localStorage.getItem("searchString"));
+        postman.publish("changeViewUnhacked", "get-bestratedtitles");
         postman.publish("changeViewUnhacked", "get-bestmatch");
         }
                
