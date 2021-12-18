@@ -33,10 +33,10 @@ namespace DataServiceLib
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
-        //add path file here or hardcode in line 43
+        //add path file here or hardcode in line 44 @path
         //string path = System.IO.File.ReadAllText(@"C:\Users\JesperBlom\hello\Portfolio-3\Portfolio3\path.txt");
-        //string path = System.IO.File.ReadAllText(@"C:\Users\sfsto\Documents\GitHub\Portfolio2\Portfoilo2\path.txt");
-          string path = System.IO.File.ReadAllText(@"C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\path.txt");
+        string path = System.IO.File.ReadAllText(@"C:\Users\sfsto\Documents\GitHub\Portfolio-3\Portfolio3\path.txt");
+        //string path = System.IO.File.ReadAllText(@"C:\Users\ander\Documents\DOX\RUC\RAWDATA\Portfolio3\Portfolio-3\Portfolio3\path.txt");
 
             optionsBuilder.LogTo(Console.WriteLine, Microsoft.Extensions.Logging.LogLevel.Information);
             optionsBuilder.EnableSensitiveDataLogging();
